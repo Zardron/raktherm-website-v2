@@ -9,7 +9,7 @@ export const OverlayText = styled.div`
   top: 20%;
   color: rgb(64, 64, 65);
   text-shadow: none;
-  padding: 40px;
+  padding: 400px;
 `;
 
 export const OverlayTexts = styled.div`
