@@ -10,8 +10,9 @@ import {
   OverlayTexts,
 } from "../assets/Home";
 
-import MultiCarousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import OVERLAY from "../assets/images/RAKTHERM-VIDEO-OVERLAY.jpg";
+import Video1 from "../assets/video/NOW-5-Layers-Reinforced-Pipes.mp4";
+import VideoCarousel from "../component/VideoCarousel";
 
 const Home = () => {
   return (
@@ -103,75 +104,7 @@ const Home = () => {
       </Carousel>
 
       <div className="containers">
-        <MultiCarousel
-          additionalTransfrom={0}
-          arrows
-          autoPlay
-          autoPlaySpeed={3000}
-          centerMode={false}
-          containerClass="container-with-dots"
-          draggable
-          focusOnSelect={false}
-          infinite
-          itemClass=""
-          keyBoardControl
-          minimumTouchDrag={80}
-          pauseOnHover
-          renderArrowsWhenDisabled={false}
-          renderButtonGroupOutside={false}
-          renderDotsOutside={false}
-          responsive={{
-            desktop: {
-              breakpoint: {
-                max: 3000,
-                min: 1024,
-              },
-              items: 4,
-              partialVisibilityGutter: 40,
-            },
-            mobile: {
-              breakpoint: {
-                max: 464,
-                min: 0,
-              },
-              items: 1,
-              partialVisibilityGutter: 30,
-            },
-            tablet: {
-              breakpoint: {
-                max: 1024,
-                min: 464,
-              },
-              items: 2,
-              partialVisibilityGutter: 30,
-            },
-          }}
-          rewind={false}
-          rewindWithAnimation={false}
-          rtl={false}
-          shouldResetAutoplay
-          showDots={false}
-          sliderClass=""
-          slidesToSlide={1}
-          swipeable
-          style={{padding: "0px 50px"}}
-        >
-          <div style={{padding: "20px"}}>
-            <img src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-          </div>
-          <div style={{padding: "20px"}}>
-            <img src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-          </div>
-          <div style={{padding: "20px"}}>
-            <img src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-          </div>
-          <div style={{padding: "20px"}}>
-            <img src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-          </div>
-          <div style={{padding: "20px"}}>
-            <img src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-          </div>
-        </MultiCarousel>
+        <VideoCarousel overlay={OVERLAY} video={Video1}/>
       </div>
     </>
   );
