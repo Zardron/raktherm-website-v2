@@ -2,17 +2,12 @@ import styled from "styled-components";
 import { VscTriangleDown } from "react-icons/vsc";
 
 export const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
   background-color: white;
   width: 100%;
   z-index: 99;
 `;
 
 export const Container = styled.div`
-  position: sticky;
   top: 0;
   margin: 0 auto;
   display: flex;
@@ -24,6 +19,7 @@ export const Container = styled.div`
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 `;
 
 export const Image = styled.img`

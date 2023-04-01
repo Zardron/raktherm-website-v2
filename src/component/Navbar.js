@@ -19,7 +19,7 @@ import {
   UL,
   Menus,
   NavLinksss,
-} from "../assets/NavbarStyle";
+} from "../assets/styled/NavbarStyle";
 import { NavbarData } from "../assets/data/NavbarData";
 import { Link } from "react-router-dom";
 
@@ -47,7 +47,7 @@ const Navbar = ({}) => {
     <Header className="sticky">
       <Container>
         <LogoContainer>
-          <Image src="https://res.cloudinary.com/dmbpo49ak/image/upload/v1669032025/RAKtherm/LOGO_WITH_TRANSPARENT_BACKGROUND_j50jyn.png" />
+          <Image src="https://www.raktherm.com/assets/images/logos/logo-2.png" alt="logo"/>
         </LogoContainer>
 
         <Nav>
