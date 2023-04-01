@@ -47,7 +47,12 @@ const Navbar = ({}) => {
     <Header className="sticky">
       <Container>
         <LogoContainer>
-          <Image src="https://www.raktherm.com/assets/images/logos/logo-2.png" alt="logo"/>
+          <Link to="/">
+            <Image
+              src="https://www.raktherm.com/assets/images/logos/logo-2.png"
+              alt="logo"
+            />
+          </Link>
         </LogoContainer>
 
         <Nav>
@@ -65,7 +70,7 @@ const Navbar = ({}) => {
                       <Menu>
                         {data.menu.map((subdata, key) => (
                           <MenuItem key={key}>
-                            <Link to="/">
+                            <Link to={`/${subdata.link}`}>
                               <MenuItemLabel>
                                 {subdata.title}{" "}
                                 {subdata.isSubMenu && <CaretDown />}

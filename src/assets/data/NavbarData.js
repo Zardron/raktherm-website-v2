@@ -5,19 +5,19 @@ export const NavbarData = [
       menu: [
         {
           title: "A Glance",
-          link: "aboutus",
+          link: "a-glance",
         },
         {
           title: "Corporate Strategy",
-          link: "",
+          link: "corporate-strategy",
         },
         {
           title: "Chairman's Message",
-          link: "",
+          link: "aboutusss",
         },
         {
           title: "Sustained Development",
-          link: "",
+          link: "aboutussss",
         },
       ],
     },
