@@ -8,8 +8,14 @@ import OVERLAY from "../assets/images/RAKTHERM-VIDEO-OVERLAY.jpg";
 import { VideoData } from "../assets/data/VideoData";
 import styled from "styled-components";
 
+const VideoContainer = styled.div`
+  width: 1270px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 const TitleWrapper = styled.div`
-margin-top: 30px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
 `;
@@ -41,7 +47,6 @@ const Title = styled.h2`
   padding: 0px 0px 0px 10px;
 `;
 
-
 function NextArrow({ onClick }) {
   return (
     <div className="arrow arrow-right" onClick={onClick}>
@@ -70,11 +75,11 @@ const VideoCarousel = () => {
   };
   return (
     <>
-      <TitleWrapper>
-        <LineTitle>|</LineTitle>
-        <Title>VIDEO GALLERY</Title>
-      </TitleWrapper>
-      <div style={{ width: "100%" }}>
+      <VideoContainer>
+        <TitleWrapper>
+          <LineTitle>|</LineTitle>
+          <Title>VIDEO GALLERY</Title>
+        </TitleWrapper>
         <Slider {...settings} style={{ padding: "20px 60px" }}>
           {VideoData.map((item, key) => (
             <div>
@@ -92,7 +97,7 @@ const VideoCarousel = () => {
             </div>
           ))}
         </Slider>
-      </div>
+      </VideoContainer>
     </>
   );
 };

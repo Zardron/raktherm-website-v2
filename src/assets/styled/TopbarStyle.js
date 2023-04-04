@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const TopBarContainer = styled.div`
+  width: 1270px;
+  padding: 5px 10px;
+  margin-right: auto;
+  margin-left: auto;
+`;
+
 export const Topbar = styled.div`
   display: flex;
   align-items: center;

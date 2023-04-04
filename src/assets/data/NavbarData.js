@@ -5,19 +5,19 @@ export const NavbarData = [
       menu: [
         {
           title: "A Glance",
-          link: "a-glance",
+          link: "/about-us/a-glance",
         },
         {
           title: "Corporate Strategy",
-          link: "corporate-strategy",
+          link: "/about-us/corporate-strategy",
         },
         {
           title: "Chairman's Message",
-          link: "aboutusss",
+          link: "/about-us/chairmans-message",
         },
         {
           title: "Sustained Development",
-          link: "aboutussss",
+          link: "/about-us/sustained-development",
         },
       ],
     },
@@ -27,19 +27,19 @@ export const NavbarData = [
       menu: [
         {
           title: "Piping Technologies",
-          link: "",
+          link: "/solutions/piping-technologies",
         },
         {
-          title: "Piping System Usage",
-          link: "",
+          title: "Piping Systems Usage",
+          link: "/solutions/piping-systems-usage",
         },
         {
-          title: "Chairman's Message",
-          link: "",
+          title: "Ultimate Solutions",
+          link: "/solutions/ultimate-solutions",
         },
         {
-          title: "Sustained Development",
-          link: "",
+          title: "RAKtherm Quality",
+          link: "/solutions/raktherm-quality",
         },
       ],
     },

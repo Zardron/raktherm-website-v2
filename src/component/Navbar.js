@@ -44,7 +44,7 @@ const Navbar = ({}) => {
   }, [offset]);
 
   return (
-    <Header className="sticky">
+    <Header className={isUpper ? "" : "sticky"}>
       <Container>
         <LogoContainer>
           <Link to="/">
@@ -62,7 +62,7 @@ const Navbar = ({}) => {
               {NavbarData.map((data, index) => (
                 <>
                   <NavLinksss key={index}>
-                    <Label>
+                    <Label className={isUpper ? "" : "scrolled"}>
                       {data.title}
                       {data.isMenu && <CaretDown />}
                     </Label>
@@ -70,7 +70,7 @@ const Navbar = ({}) => {
                       <Menu>
                         {data.menu.map((subdata, key) => (
                           <MenuItem key={key}>
-                            <Link to={`/${subdata.link}`}>
+                            <Link to={`${subdata.link}`}>
                               <MenuItemLabel>
                                 {subdata.title}{" "}
                                 {subdata.isSubMenu && <CaretDown />}

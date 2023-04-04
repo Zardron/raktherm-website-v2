@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AGlance from "./pages/AGlance";
-import CorporateStrategy from "./pages/CorporateStrategy";
+import AboutUs from "./pages/AboutUs";
+import Solutions from "./pages/Solutions";
 import Home from "./pages/Home";
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/a-glance" element={<AGlance />} />
-        <Route path="/corporate-strategy" element={<CorporateStrategy />} />
+        <Route path="/about-us/:title" element={<AboutUs />} />
+        <Route path="/solutions/:title" element={<Solutions />} />
       </Routes>
     </Router>
   );

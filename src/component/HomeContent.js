@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
+const Container = styled.div`
+  width: 1270px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -151,7 +157,7 @@ const BlogDescriptions = styled.p`
 const HomeContent = () => {
   return (
     <>
-      <div className="containers">
+      <Container>
         <Wrapper>
           <LeftPanel>
             <Image
@@ -182,11 +188,10 @@ const HomeContent = () => {
             </Description>
           </RightPanel>
         </Wrapper>
-      </div>
+      </Container>
 
       <SubWrapper>
-        <div
-          className="containers"
+        <Container
           style={{
             display: "flex",
             alignItems: "center",
@@ -222,12 +227,11 @@ const HomeContent = () => {
               durability compared to the traditional pipes.
             </Description>
           </RightPanel>
-        </div>
+        </Container>
       </SubWrapper>
 
       <Wrapper style={{ backgroundColor: "#f9fafb" }}>
-        <div
-          className="containers"
+        <Container
           style={{
             margin: "50px 0",
             display: "flex",
@@ -318,12 +322,11 @@ const HomeContent = () => {
               </RightPanel>
             </BlogContainer>
           </RightPanel>
-        </div>
+        </Container>
       </Wrapper>
 
       <SubWrapper style={{ backgroundColor: "#f2f7fc" }}>
-        <div
-          className="containers"
+        <Container
           style={{
             display: "flex",
             alignItems: "center",
@@ -354,7 +357,7 @@ const HomeContent = () => {
               shipping to customers
             </Description>
           </RightPanel>
-        </div>
+        </Container>
       </SubWrapper>
     </>
   );

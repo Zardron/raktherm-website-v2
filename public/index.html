@@ -44,6 +44,21 @@
     <title>RAKtherm Ultimate Piping Solutions</title>
 
     <style>
+      .sticky {
+        position: fixed;
+        top: 0;
+        height: 100px !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+
+      .scrolled {
+        line-height: 100px !important;
+      }
+
       .arrow {
         font-size: 50px;
         padding: 5px 15px;
@@ -61,11 +76,6 @@
         left: -20px;
       }
 
-      .containers {
-        margin-right: auto;
-        margin-left: auto;
-      }
-
       .video-container {
         display: flex;
         align-items: center;
@@ -79,29 +89,6 @@
         position: relative;
         width: 60% !important;
         margin: 50px;
-      }
-
-      @media (min-width: 768px) {
-        .containers {
-          width: 750px;
-        }
-      }
-
-      @media (min-width: 992px) {
-        .containers {
-          width: 970px;
-        }
-      }
-
-      @media (min-width: 1200px) {
-        .containers {
-          width: 1270px;
-        }
-      }
-
-      .sticky {
-        position: fixed;
-        top: 0;
       }
 
       .social-container {

@@ -2,18 +2,24 @@ import styled from "styled-components";
 import { VscTriangleDown } from "react-icons/vsc";
 
 export const Header = styled.header`
+  display: flex;
+  align-items: center;
   background-color: white;
-  width: 100%;
-  z-index: 99;
+  height: 130px;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 `;
 
 export const Container = styled.div`
-  top: 0;
-  margin: 0 auto;
+  width: 1270px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   position: relative;
   background-color: white;
-  height: 100px;
 `;
 
 export const LogoContainer = styled.div`
@@ -45,6 +51,7 @@ export const DropDown = styled.div`
   box-shadow: 3px 6px 14px #00000019;
   /* border-top: 1px solid #029447; */
   transition: all 0.3s ease-out;
+  z-index: 99;
 `;
 
 export const AccountDropDown = styled.div`
@@ -144,7 +151,7 @@ export const Label = styled.a`
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 700;
-  line-height: 100px;
+  line-height: 130px;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 1px;

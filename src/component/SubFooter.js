@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { SocialIcon } from "react-social-icons";
 
+const Container = styled.div`
+  width: 1270px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 const Wrapper = styled.div`
   background-color: #1a5b39;
   padding: 40px 0px;
@@ -75,7 +81,7 @@ const SubFooter = () => {
 
   return (
     <Wrapper>
-      <div className="containers" style={{ display: "flex" }}>
+      <Container className="containers" style={{ display: "flex" }}>
         <Panel>
           <TitleWidget>ABOUT US</TitleWidget>
           <WidgetDetails style={{ marginBottom: "30px" }}>
@@ -170,7 +176,7 @@ const SubFooter = () => {
 
           <FullName></FullName>
         </Panel>
-      </div>
+      </Container>
     </Wrapper>
   );
 };
