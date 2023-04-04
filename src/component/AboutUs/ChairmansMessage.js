@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { RiArrowDropRightLine } from "react-icons/ri";
+import { ABOUT_US } from "../../assets/data/WidgetData";
 
 const Container = styled.div`
   width: 1270px;
@@ -69,10 +70,10 @@ const WidgetLink = styled(Link)`
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
-  }
 
-  :hover ${ArrowRight} {
-    opacity: 1;
+    ${ArrowRight} {
+      opacity: 1 !important;
+    }
   }
 `;
 
@@ -105,21 +106,14 @@ const ChairmansMessage = () => {
           <Wrapper>
             <LeftPanel>
               <WidgetTitle>About us</WidgetTitle>
-              <WidgetLink to={`/about-us/a-glance`}>
-                A Glance <ArrowRight />
-              </WidgetLink>
-              <WidgetLink to={`/about-us/corporate-strategy`}>
-                Corporate Strategy <ArrowRight />
-              </WidgetLink>
-              <WidgetLink
-                to={`/about-us/chairmans-message`}
-                className="active-link"
-              >
-                Chairman's Message <ArrowRight style={{ opacity: "1" }} />
-              </WidgetLink>
-              <WidgetLink to={`/about-us/sustained-development`}>
-                Sustained Development <ArrowRight />
-              </WidgetLink>
+              {ABOUT_US.map((item, index) => (
+                <>
+                  <WidgetLink to={`/about-us/${item.link}`} key={index}>
+                    {item.title}
+                    <ArrowRight />
+                  </WidgetLink>
+                </>
+              ))}
 
               <QuickLink>
                 <WidgetTitle>Quick link</WidgetTitle>
