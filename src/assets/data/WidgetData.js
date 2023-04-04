@@ -1,3 +1,36 @@
+export const QUICK_LINK = [
+  {
+    id: "1",
+    title: "Join MyRAKtherm",
+    link: "/join-my-raktherm"
+  },
+  {
+    id: "2",
+    title: "Get Local Support",
+    link: "/get-local-support"
+  },
+  {
+    id: "3",
+    title: "Ultimate Solutions",
+    link: "/solutions/ultimate-solutions"
+  },
+  {
+    id: "4",
+    title: "Download Brochures",
+    link: "/download-brochures"
+  },
+  {
+    id: "5",
+    title: "Join RAKtherm Academy",
+    link: "/join-raktherm-academy"
+  },
+  {
+    id: "6",
+    title: "Join RAKtherm Plumber Community",
+    link: "/join-raktherm-plumber-community"
+  },
+]
+
 export const ABOUT_US = [
   {
     id: "1",

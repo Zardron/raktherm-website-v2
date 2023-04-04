@@ -13,6 +13,7 @@ import CorporateStrategy from "../component/AboutUs/CorporateStrategy";
 import ChairmansMessage from "../component/AboutUs/ChairmansMessage";
 import SustainedDevelopment from "../component/AboutUs/SustainedDevelopment";
 import { ABOUT_US } from "../assets/data/WidgetData";
+import QuickLink from "../component/QuickLink";
 
 const Container = styled.div`
   width: 1270px;
@@ -181,27 +182,6 @@ const WidgetLink = styled(Link)`
   }
 `;
 
-const WidgetDetails = styled.div`
-  font-size: 14px;
-  margin-bottom: 25px;
-  color: #61728d;
-`;
-
-const Title = styled.div`
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 18px;
-  margin: 0;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: #3a4d6a;
-`;
-
-const QuickLink = styled.div`
-  padding-top: 30px;
-`;
-
 const AboutUs = () => {
   const { title } = useParams();
   console.log(title);
@@ -239,7 +219,7 @@ const AboutUs = () => {
           <Container>
             <Wrapper>
               <LeftPanel>
-                <WidgetTitle>Solutions</WidgetTitle>
+                <WidgetTitle>ABOUT US</WidgetTitle>
                 {ABOUT_US.map((item, index) => (
                   <>
                     <WidgetLink to={`/about-us/${item.link}`} key={index}>
@@ -249,27 +229,7 @@ const AboutUs = () => {
                   </>
                 ))}
 
-                <QuickLink>
-                  <WidgetTitle>Quick link</WidgetTitle>
-                  <WidgetLink>
-                    Join MyRAKtherm <ArrowRight />
-                  </WidgetLink>
-                  <WidgetLink>
-                    Get Local Support <ArrowRight />
-                  </WidgetLink>
-                  <WidgetLink>
-                    Ultimate Solutions <ArrowRight />
-                  </WidgetLink>
-                  <WidgetLink>
-                    Download Brochures <ArrowRight />
-                  </WidgetLink>
-                  <WidgetLink>
-                    Join RAKtherm Academy <ArrowRight />
-                  </WidgetLink>
-                  <WidgetLink>
-                    Join Plumber Community <ArrowRight />
-                  </WidgetLink>
-                </QuickLink>
+                <QuickLink />
               </LeftPanel>
 
               <RightPanel>
