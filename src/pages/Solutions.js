@@ -8,10 +8,10 @@ import TopBar from "../component/TopBar";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SubFooter from "../component/SubFooter";
-import CorporateStrategy from "../component/AboutUs/CorporateStrategy";
-import ChairmansMessage from "../component/AboutUs/ChairmansMessage";
-import SustainedDevelopment from "../component/AboutUs/SustainedDevelopment";
 import PipingTechnologies from "../component/Solutions/PipingTechnologies";
+import PipingSystemsUsage from "../component/Solutions/PipingSystemUsage";
+import UltimateSolutions from "../component/Solutions/UltimateSolutions";
+import RakthermQuality from "../component/Solutions/RakthermQuality";
 
 const Container = styled.div`
   width: 1270px;
@@ -184,9 +184,9 @@ const Solutions = () => {
         </Container>
 
         {title === "piping-technologies" && <PipingTechnologies />}
-        {title === "corporate-strategy" && <CorporateStrategy />}
-        {title === "chairmans-message" && <ChairmansMessage />}
-        {title === "sustained-development" && <SustainedDevelopment />}
+        {title === "piping-systems-usage" && <PipingSystemsUsage />}
+        {title === "ultimate-solutions" && <UltimateSolutions />}
+        {title === "raktherm-quality" && <RakthermQuality />}
       </BannerPage>
       <SubFooter />
       <Footer />

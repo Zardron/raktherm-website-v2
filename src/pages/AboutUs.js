@@ -12,6 +12,7 @@ import AGlance from "../component/AboutUs/AGlance";
 import CorporateStrategy from "../component/AboutUs/CorporateStrategy";
 import ChairmansMessage from "../component/AboutUs/ChairmansMessage";
 import SustainedDevelopment from "../component/AboutUs/SustainedDevelopment";
+import { ABOUT_US } from "../assets/data/WidgetData";
 
 const Container = styled.div`
   width: 1270px;
@@ -150,6 +151,57 @@ const ArrowRight = styled(RiArrowDropRightLine)`
   opacity: 0;
 `;
 
+const WidgetContent = styled.div`
+  background-color: white;
+`;
+
+const WidgetLink = styled(Link)`
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #61728d;
+  border-bottom: 1px solid #f1f6fd;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+
+  :hover {
+    color: #008053;
+    box-shadow: -2px 2px 0 0 #008053;
+    padding: 10px 0px 10px 20px;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+
+    ${ArrowRight} {
+      opacity: 1 !important;
+    }
+  }
+`;
+
+const WidgetDetails = styled.div`
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: #61728d;
+`;
+
+const Title = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  margin: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #3a4d6a;
+`;
+
+const QuickLink = styled.div`
+  padding-top: 30px;
+`;
+
 const AboutUs = () => {
   const { title } = useParams();
   console.log(title);
@@ -183,10 +235,52 @@ const AboutUs = () => {
           </Content>
         </Container>
 
-        {title === "a-glance" && <AGlance />}
-        {title === "corporate-strategy" && <CorporateStrategy />}
-        {title === "chairmans-message" && <ChairmansMessage />}
-        {title === "sustained-development" && <SustainedDevelopment />}
+        <WidgetContent>
+          <Container>
+            <Wrapper>
+              <LeftPanel>
+                <WidgetTitle>Solutions</WidgetTitle>
+                {ABOUT_US.map((item, index) => (
+                  <>
+                    <WidgetLink to={`/about-us/${item.link}`} key={index}>
+                      {item.title}
+                      <ArrowRight />
+                    </WidgetLink>
+                  </>
+                ))}
+
+                <QuickLink>
+                  <WidgetTitle>Quick link</WidgetTitle>
+                  <WidgetLink>
+                    Join MyRAKtherm <ArrowRight />
+                  </WidgetLink>
+                  <WidgetLink>
+                    Get Local Support <ArrowRight />
+                  </WidgetLink>
+                  <WidgetLink>
+                    Ultimate Solutions <ArrowRight />
+                  </WidgetLink>
+                  <WidgetLink>
+                    Download Brochures <ArrowRight />
+                  </WidgetLink>
+                  <WidgetLink>
+                    Join RAKtherm Academy <ArrowRight />
+                  </WidgetLink>
+                  <WidgetLink>
+                    Join Plumber Community <ArrowRight />
+                  </WidgetLink>
+                </QuickLink>
+              </LeftPanel>
+
+              <RightPanel>
+                {title === "a-glance" && <AGlance />}
+                {title === "corporate-strategy" && <CorporateStrategy />}
+                {title === "chairmans-message" && <ChairmansMessage />}
+                {title === "sustained-development" && <SustainedDevelopment />}
+              </RightPanel>
+            </Wrapper>
+          </Container>
+        </WidgetContent>
       </BannerPage>
       <SubFooter />
       <Footer />

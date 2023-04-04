@@ -57,7 +57,6 @@ const WidgetLink = styled(Link)`
   padding-bottom: 10px;
   color: #61728d;
   border-bottom: 1px solid #f1f6fd;
-  webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -66,7 +65,6 @@ const WidgetLink = styled(Link)`
     color: #008053;
     box-shadow: -2px 2px 0 0 #008053;
     padding: 10px 0px 10px 20px;
-    webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
@@ -101,88 +99,44 @@ const QuickLink = styled.div`
 const AGlance = () => {
   return (
     <>
-      <Content>
-        <Container>
-          <Wrapper>
-            <LeftPanel>
-              <WidgetTitle>About us</WidgetTitle>
-              {ABOUT_US.map((item, index) => (
-                <>
-                  <WidgetLink to={`/about-us/${item.link}`} key={index}>
-                    {item.title}
-                    <ArrowRight />
-                  </WidgetLink>
-                </>
-              ))}
-
-              <QuickLink>
-                <WidgetTitle>Quick link</WidgetTitle>
-                <WidgetLink>
-                  Join MyRAKtherm <ArrowRight />
-                </WidgetLink>
-                <WidgetLink>
-                  Get Local Support <ArrowRight />
-                </WidgetLink>
-                <WidgetLink>
-                  Ultimate Solutions <ArrowRight />
-                </WidgetLink>
-                <WidgetLink>
-                  Download Brochures <ArrowRight />
-                </WidgetLink>
-                <WidgetLink>
-                  Join RAKtherm Academy <ArrowRight />
-                </WidgetLink>
-                <WidgetLink>
-                  Join Plumber Community <ArrowRight />
-                </WidgetLink>
-              </QuickLink>
-            </LeftPanel>
-            <RightPanel>
-              <Title>Raktherm at a glance</Title>
-              <WidgetDetails>
-                RAKtherm- Gulf Plastic and Converting Industries is under the
-                flourishing arm of an illustrious group Hashim Industry, which
-                was established 1963. We are one of the region’s renowned
-                business conglomerates. RAKtherm is the flagship division and
-                pioneer of integrated PPR, PEX, anti-UV, Reinforced, and DVW
-                piping systems.
-              </WidgetDetails>
-              <WidgetDetails>
-                When foreign investments flourished in the region, a growing
-                demand for construction supplies arise. The group immediately
-                responded to the growing requirements of the industry and
-                expands its product portfolio to include RAKtherm piping systems
-                in order to sustain the demand of the construction sector.
-              </WidgetDetails>
-              <WidgetDetails>
-                Established over decades back, with a manufacturing facility and
-                corporate sales headquarter in the United Arab Emirates;
-                RAKtherm is the first and largest PPR and PEX systems
-                manufacturer in the Middle East.
-              </WidgetDetails>
-              <Title>OUR LEADERSHIP</Title>
-              <WidgetDetails>
-                “The most eminent high-end global manufacturer of piping systems
-                technology”
-              </WidgetDetails>
-              <WidgetDetails>
-                Throughout the years, RAKtherm is known for its world-class
-                brand delivering effective and efficient piping systems. With
-                continuous pursuance in finding solutions to the major
-                challenges in the MEP industry, we established ourselves highly
-                recognized in the piping industry. Our understanding to the
-                technological quest in plastic piping systems enables us to
-                address these demanding challenges.{" "}
-              </WidgetDetails>
-              <WidgetDetails>
-                We are committed to making a real difference in providing
-                hi-technological piping innovations that are breakthrough in the
-                industry.
-              </WidgetDetails>
-            </RightPanel>
-          </Wrapper>
-        </Container>
-      </Content>
+      <Title>Raktherm at a glance</Title>
+      <WidgetDetails>
+        RAKtherm- Gulf Plastic and Converting Industries is under the
+        flourishing arm of an illustrious group Hashim Industry, which was
+        established 1963. We are one of the region’s renowned business
+        conglomerates. RAKtherm is the flagship division and pioneer of
+        integrated PPR, PEX, anti-UV, Reinforced, and DVW piping systems.
+      </WidgetDetails>
+      <WidgetDetails>
+        When foreign investments flourished in the region, a growing demand for
+        construction supplies arise. The group immediately responded to the
+        growing requirements of the industry and expands its product portfolio
+        to include RAKtherm piping systems in order to sustain the demand of the
+        construction sector.
+      </WidgetDetails>
+      <WidgetDetails>
+        Established over decades back, with a manufacturing facility and
+        corporate sales headquarter in the United Arab Emirates; RAKtherm is the
+        first and largest PPR and PEX systems manufacturer in the Middle East.
+      </WidgetDetails>
+      <Title>OUR LEADERSHIP</Title>
+      <WidgetDetails>
+        “The most eminent high-end global manufacturer of piping systems
+        technology”
+      </WidgetDetails>
+      <WidgetDetails>
+        Throughout the years, RAKtherm is known for its world-class brand
+        delivering effective and efficient piping systems. With continuous
+        pursuance in finding solutions to the major challenges in the MEP
+        industry, we established ourselves highly recognized in the piping
+        industry. Our understanding to the technological quest in plastic piping
+        systems enables us to address these demanding challenges.{" "}
+      </WidgetDetails>
+      <WidgetDetails>
+        We are committed to making a real difference in providing
+        hi-technological piping innovations that are breakthrough in the
+        industry.
+      </WidgetDetails>
     </>
   );
 };

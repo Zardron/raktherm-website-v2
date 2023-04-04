@@ -66,7 +66,7 @@ const WidgetLink = styled(Link)`
     color: #008053;
     box-shadow: -2px 2px 0 0 #008053;
     padding: 10px 0px 10px 20px;
-    webkit-transition: all 0.3s linear;
+     
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;

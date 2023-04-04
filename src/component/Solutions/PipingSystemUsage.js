@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { RiArrowDropRightLine } from "react-icons/ri";
+import { ImCheckmark } from "react-icons/im";
+import { SOLUTIONS } from "../../assets/data/WidgetData";
 
 const Container = styled.div`
   width: 1270px;
@@ -56,7 +58,7 @@ const WidgetLink = styled(Link)`
   padding-bottom: 10px;
   color: #61728d;
   border-bottom: 1px solid #f1f6fd;
-  webkit-transition: all 0.3s linear;
+   
   -moz-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -65,7 +67,7 @@ const WidgetLink = styled(Link)`
     color: #008053;
     box-shadow: -2px 2px 0 0 #008053;
     padding: 10px 0px 10px 20px;
-    webkit-transition: all 0.3s linear;
+     
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
@@ -86,6 +88,15 @@ const WidgetDetails = styled.div`
   color: #61728d;
 `;
 
+const Details = styled.div`
+  width: 98%;
+  display: flex;
+  font-size: 14px;
+  color: #61728d;
+  margin-left: 10px;
+  margin-bottom: 5px;
+`;
+
 const Title = styled.div`
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -101,7 +112,32 @@ const QuickLink = styled.div`
   padding-top: 30px;
 `;
 
-const PipingTechnologies = () => {
+const WidgetSubTitle = styled.div`
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11.62px;
+  font-weight: 700;
+  line-height: 18px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #3a4d6a;
+  margin-bottom: 25px;
+`;
+
+const ChecklistContainer = styled.div`
+  display: flex;
+`;
+
+const Check = styled(ImCheckmark)`
+  width: 2%;
+  color: #b7c6cf;
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 900;
+`;
+
+const PipingSystemsUsage = () => {
   return (
     <>
       <Content>
@@ -141,47 +177,116 @@ const PipingTechnologies = () => {
               </QuickLink>
             </LeftPanel>
             <RightPanel>
-              <Title>Raktherm at a glance</Title>
+              <Title>PIPING SYSTEMS USAGE</Title>
               <WidgetDetails>
-                RAKtherm- Gulf Plastic and Converting Industries is under the
-                flourishing arm of an illustrious group Hashim Industry, which
-                was established 1963. We are one of the region’s renowned
-                business conglomerates. RAKtherm is the flagship division and
-                pioneer of integrated PPR, PEX, anti-UV, Reinforced, and DVW
-                piping systems.
+                A versatile and comprehensive delivery system is used in the
+                transfer of high pressure warm/cold water and other fluids in
+                all modern residential, commercial, and industrial applications.
+                The creative solutions provided by RAKtherm in its product base
+                renders it a leader in the industry.
               </WidgetDetails>
-              <WidgetDetails>
-                When foreign investments flourished in the region, a growing
-                demand for construction supplies arise. The group immediately
-                responded to the growing requirements of the industry and
-                expands its product portfolio to include RAKtherm piping systems
-                in order to sustain the demand of the construction sector.
-              </WidgetDetails>
-              <WidgetDetails>
-                Established over decades back, with a manufacturing facility and
-                corporate sales headquarter in the United Arab Emirates;
-                RAKtherm is the first and largest PPR and PEX systems
-                manufacturer in the Middle East.
-              </WidgetDetails>
-              <Title>OUR LEADERSHIP</Title>
-              <WidgetDetails>
-                “The most eminent high-end global manufacturer of piping systems
-                technology”
-              </WidgetDetails>
-              <WidgetDetails>
-                Throughout the years, RAKtherm is known for its world-class
-                brand delivering effective and efficient piping systems. With
-                continuous pursuance in finding solutions to the major
-                challenges in the MEP industry, we established ourselves highly
-                recognized in the piping industry. Our understanding to the
-                technological quest in plastic piping systems enables us to
-                address these demanding challenges.{" "}
-              </WidgetDetails>
-              <WidgetDetails>
-                We are committed to making a real difference in providing
-                hi-technological piping innovations that are breakthrough in the
-                industry.
-              </WidgetDetails>
+              <WidgetSubTitle>PPR PIPING SYSTEMS</WidgetSubTitle>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Potable installations inside houses, high rise buildings,
+                  hotels, hospitals and virtually all types of commercial and
+                  residential buildings
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Factories with high-pressure water and compressed air
+                  circuits.
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>Rain drainage and collection systems.</Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Indoor and outdoor swimming pools, gyms and their water
+                  filtration circuits and water installations.
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Piping networks for all types of irrigation and agricultural
+                  applications and Pressurized Piping Networks.
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Piping networks for all types for industrial applications like
+                  the delivery of aggressive fluids containing acidic, alkaline,
+                  reactive and corrosive chemicals.
+                </Details>
+              </ChecklistContainer>
+
+              <WidgetSubTitle style={{marginTop: "10px"}}>INCLUDING APPLICATIONS FOR:</WidgetSubTitle>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Connections from municipality water supply to the tanks and
+                  reservoirs.
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Boilers and radiator connections and networks.
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Risers for water delivery, ventilation, and pressure relief.
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Water transport from pumps to upper tanks and distribution
+                  points.
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Connections through meters, and distributor manifolds.
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Distributions inside flats, apartments, houses etc.
+                </Details>
+              </ChecklistContainer>
+
+              <ChecklistContainer>
+                <Check />
+                <Details>
+                  Under floor network distribution and under floor heating
+                  networks.
+                </Details>
+              </ChecklistContainer>
             </RightPanel>
           </Wrapper>
         </Container>
@@ -190,4 +295,4 @@ const PipingTechnologies = () => {
   );
 };
 
-export default PipingTechnologies;
+export default PipingSystemsUsage;

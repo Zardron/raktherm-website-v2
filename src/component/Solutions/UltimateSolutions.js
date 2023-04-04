@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { RiArrowDropRightLine } from "react-icons/ri";
+import { SOLUTIONS } from "../../assets/data/WidgetData";
 
 const Container = styled.div`
   width: 1270px;
@@ -56,7 +57,6 @@ const WidgetLink = styled(Link)`
   padding-bottom: 10px;
   color: #61728d;
   border-bottom: 1px solid #f1f6fd;
-  webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -65,7 +65,6 @@ const WidgetLink = styled(Link)`
     color: #008053;
     box-shadow: -2px 2px 0 0 #008053;
     padding: 10px 0px 10px 20px;
-    webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
@@ -97,7 +96,20 @@ const QuickLink = styled.div`
   padding-top: 30px;
 `;
 
-const PipingTechnologies = () => {
+const WidgetSubTitle = styled.div`
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11.62px;
+  font-weight: 700;
+  line-height: 18px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #3a4d6a;
+  margin-bottom: 25px;
+`;
+
+const UltimateSolutions = () => {
   return (
     <>
       <Content>
@@ -137,46 +149,30 @@ const PipingTechnologies = () => {
               </QuickLink>
             </LeftPanel>
             <RightPanel>
-              <Title>Raktherm at a glance</Title>
+              <Title>ULTIMATE PIPING SOLUTIONS</Title>
+              <WidgetSubTitle>
+                WHY RAKTHERM? BECAUSE WE MANUFACTURE HIGH QUALITY PIPING SYSTEMS
+                TO SUSTAIN AND SUPPORT THE PIPING INDUSTRY GLOBALLY BASE ON
+                VALUE AND EXCELLENCE.
+              </WidgetSubTitle>
               <WidgetDetails>
-                RAKtherm- Gulf Plastic and Converting Industries is under the
-                flourishing arm of an illustrious group Hashim Industry, which
-                was established 1963. We are one of the region’s renowned
-                business conglomerates. RAKtherm is the flagship division and
-                pioneer of integrated PPR, PEX, anti-UV, Reinforced, and DVW
-                piping systems.
+                RAKtherm Ultimate Piping Solutions has gained the depth
+                understanding of piping systems to distribute water in the most
+                effective way. With 50 years of expertise we have mastered the
+                piping network analysis through comprehensive research and
+                development to bring modern approach through innovation. Being
+                the pioneer and ultimate provider of piping solutions, we are
+                committed to deliver the highest quality of value added products
+                and services.
               </WidgetDetails>
               <WidgetDetails>
-                When foreign investments flourished in the region, a growing
-                demand for construction supplies arise. The group immediately
-                responded to the growing requirements of the industry and
-                expands its product portfolio to include RAKtherm piping systems
-                in order to sustain the demand of the construction sector.
-              </WidgetDetails>
-              <WidgetDetails>
-                Established over decades back, with a manufacturing facility and
-                corporate sales headquarter in the United Arab Emirates;
-                RAKtherm is the first and largest PPR and PEX systems
-                manufacturer in the Middle East.
-              </WidgetDetails>
-              <Title>OUR LEADERSHIP</Title>
-              <WidgetDetails>
-                “The most eminent high-end global manufacturer of piping systems
-                technology”
-              </WidgetDetails>
-              <WidgetDetails>
-                Throughout the years, RAKtherm is known for its world-class
-                brand delivering effective and efficient piping systems. With
-                continuous pursuance in finding solutions to the major
-                challenges in the MEP industry, we established ourselves highly
-                recognized in the piping industry. Our understanding to the
-                technological quest in plastic piping systems enables us to
-                address these demanding challenges.{" "}
-              </WidgetDetails>
-              <WidgetDetails>
-                We are committed to making a real difference in providing
-                hi-technological piping innovations that are breakthrough in the
-                industry.
+                We grow and cultivated with technological advancement, RAKtherm
+                pipes were developed and manufactured based on expertise and
+                experience. Produced under German technology, undergoes through
+                testing that is conformed and certified for global distribution
+                and utilization. As for this, we have build up a strong market
+                foundation across GCC, North and South Africa, South and East
+                Asia, and Europe.
               </WidgetDetails>
             </RightPanel>
           </Wrapper>
@@ -186,4 +182,4 @@ const PipingTechnologies = () => {
   );
 };
 
-export default PipingTechnologies;
+export default UltimateSolutions;
