@@ -49,15 +49,16 @@ export const NavbarData = [
       menu: [
         {
           title: "Catalogues & Downloads",
-          link: "",
+          link: "/services-and-support/catalogues-and-downloads",
         },
         {
           title: "Certifications",
-          link: "",
+          link: "/services-and-support/certifications",
         },
         {
           title: "Guidelines",
           isSubMenu: true,
+          link: "/services-and-support/guidelines",
           subMenu: [
             {
               title: "Welding",

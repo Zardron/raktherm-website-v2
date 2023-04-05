@@ -124,3 +124,21 @@ export const SOLUTIONS = [
     link: "raktherm-quality",
   },
 ];
+
+export const SERVICES_AND_SUPPORT = [
+  {
+    id: "1",
+    title: "Catalogues & Downloads",
+    link: "catalogues-and-downloads",
+  },
+  {
+    id: "2",
+    title: "Certifications",
+    link: "certifications",
+  },
+  {
+    id: "3",
+    title: "Guidelines",
+    link: "guidelines",
+  },
+];
