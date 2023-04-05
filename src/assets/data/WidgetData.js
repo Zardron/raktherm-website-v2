@@ -1,35 +1,83 @@
+
 export const QUICK_LINK = [
   {
     id: "1",
     title: "Join MyRAKtherm",
-    link: "/join-my-raktherm"
+    link: "/join-my-raktherm",
   },
   {
     id: "2",
     title: "Get Local Support",
-    link: "/get-local-support"
+    link: "/get-local-support",
   },
   {
     id: "3",
     title: "Ultimate Solutions",
-    link: "/solutions/ultimate-solutions"
+    link: "/solutions/ultimate-solutions",
   },
   {
     id: "4",
     title: "Download Brochures",
-    link: "/download-brochures"
+    link: "/download-brochures",
   },
   {
     id: "5",
     title: "Join RAKtherm Academy",
-    link: "/join-raktherm-academy"
+    link: "/join-raktherm-academy",
   },
   {
     id: "6",
     title: "Join RAKtherm Plumber Community",
-    link: "/join-raktherm-plumber-community"
+    link: "/join-raktherm-plumber-community",
   },
-]
+];
+
+export const PRODUCT_RANGE = [
+  {
+    id: "1",
+    title: "PPR Piping Systems",
+    link: "/piping-technologies",
+    ref: "",
+    sublink: [],
+  },
+  {
+    id: "2",
+    title: "MULTI-LAYER Reinforced PVC-U Piping Systems",
+    link: "/piping-technologies",
+    ref: "",
+    sublink: [
+      {
+        sublink_title: "Solvent Joint System",
+        sublink_link: "/piping-technologies",
+      },
+      {
+        sublink_title: "Push-Fit Joint System",
+        sublink_link: "/piping-technologies",
+      },
+    ],
+  },
+  {
+    id: "3",
+    title: "PEX Piping Systems",
+    link: "/piping-technologies",
+    ref: "",
+    sublink: [],
+  },
+  {
+    id: "4",
+    title: "Anti-UV Piping Systems",
+    link: "/piping-technologies",
+    ref: "",
+    sublink: [],
+  },
+  {
+    id: "5",
+    title: "Reinforced Piping Systems",
+    link: "/piping-technologies",
+    ref: "",
+    sublink: [],
+  },
+];
 
 export const ABOUT_US = [
   {
@@ -53,7 +101,6 @@ export const ABOUT_US = [
     link: "sustained-development",
   },
 ];
-
 
 export const SOLUTIONS = [
   {

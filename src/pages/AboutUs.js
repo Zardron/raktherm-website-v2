@@ -38,7 +38,7 @@ const RightPanel = styled.div`
 `;
 
 const BannerPage = styled.div`
-  background-image: url("https://res.cloudinary.com/dmbpo49ak/image/upload/v1680333183/RAKtherm/BANNERS/about-us-banner_dqgef2.jpg");
+  background-image: url(${_BANNER});
   background-attachment: fixed;
   background-position: center;
   background-size: cover;

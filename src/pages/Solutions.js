@@ -12,6 +12,9 @@ import PipingTechnologies from "../component/Solutions/PipingTechnologies";
 import PipingSystemsUsage from "../component/Solutions/PipingSystemUsage";
 import UltimateSolutions from "../component/Solutions/UltimateSolutions";
 import RakthermQuality from "../component/Solutions/RakthermQuality";
+import { SOLUTIONS } from "../assets/data/WidgetData";
+import { BsDot } from "react-icons/bs";
+import { useRef } from "react";
 
 const Container = styled.div`
   width: 1270px;
@@ -131,6 +134,10 @@ const AboutUsDetails = styled.div``;
 
 const GetInTouchDetails = styled.div``;
 
+const SolutionsContent = styled.div`
+  background-color: white;
+`;
+
 const WidgetTitle = styled.div`
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -150,9 +157,88 @@ const ArrowRight = styled(RiArrowDropRightLine)`
   opacity: 0;
 `;
 
+const ProductRangeContainer = styled.div`
+  padding-top: 30px;
+`;
+
+const WidgetLink = styled(Link)`
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #61728d;
+  border-bottom: 1px solid #f1f6fd;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+
+  :hover {
+    color: #008053;
+    box-shadow: -2px 2px 0 0 #008053;
+    padding: 10px 0px 10px 20px;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+
+    ${ArrowRight} {
+      opacity: 1 !important;
+    }
+  }
+`;
+
+const WidgetSublink = styled(Link)`
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #61728d;
+  border-bottom: 1px solid #f1f6fd;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  margin-left: 40px;
+
+  :hover {
+    color: #008053;
+    box-shadow: -2px 2px 0 0 #008053;
+    padding: 10px 0px 10px 20px;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+
+    ${ArrowRight} {
+      opacity: 1 !important;
+    }
+  }
+`;
+
+const Dot = styled(BsDot)`
+  color: #61728d;
+  font-size: 30px;
+  font-weight: 700;
+`;
+
 const Solutions = () => {
   const { title } = useParams();
-  console.log(title);
+
+  const div1 = useRef();
+  const div2 = useRef();
+  const div3 = useRef();
+  const div4 = useRef();
+  const div5 = useRef();
+  const div6 = useRef();
+
+  function smoothScroll(target) {
+    const { top } = target.getBoundingClientRect();
+    window.scrollTo({
+      top: top + window.pageYOffset,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <>
       <TopBar />
@@ -183,10 +269,112 @@ const Solutions = () => {
           </Content>
         </Container>
 
-        {title === "piping-technologies" && <PipingTechnologies />}
-        {title === "piping-systems-usage" && <PipingSystemsUsage />}
-        {title === "ultimate-solutions" && <UltimateSolutions />}
-        {title === "raktherm-quality" && <RakthermQuality />}
+        <SolutionsContent>
+          <Container>
+            <Wrapper>
+              <LeftPanel>
+                <WidgetTitle>Solutions</WidgetTitle>
+                {SOLUTIONS.map((item, index) => (
+                  <>
+                    <WidgetLink to={`/solutions/${item.link}`} key={index}>
+                      {item.title}
+                      <ArrowRight />
+                    </WidgetLink>
+                  </>
+                ))}
+
+                <ProductRangeContainer>
+                  <WidgetTitle>Quick link</WidgetTitle>
+                  <WidgetLink
+                    to="/solutions/piping-technologies"
+                    onClick={
+                      title === "piping-technologies"
+                        ? () => smoothScroll(div1.current)
+                        : ""
+                    }
+                  >
+                    PPR Piping Systems <ArrowRight />
+                  </WidgetLink>
+                  <WidgetLink
+                    to="/solutions/piping-technologies"
+                    onClick={
+                      title === "piping-technologies"
+                        ? () => smoothScroll(div2.current)
+                        : ""
+                    }
+                  >
+                    MULTI-LAYER Reinforced PVC-U Piping Systems <ArrowRight />
+                  </WidgetLink>
+                  <WidgetSublink
+                    to="/solutions/piping-technologies"
+                    onClick={
+                      title === "piping-technologies"
+                        ? () => smoothScroll(div2.current)
+                        : ""
+                    }
+                  >
+                    <Dot />
+                    Solvent Joint System
+                  </WidgetSublink>
+                  <WidgetSublink
+                    to="/solutions/piping-technologies"
+                    onClick={
+                      title === "piping-technologies"
+                        ? () => smoothScroll(div3.current)
+                        : ""
+                    }
+                  >
+                    <Dot />
+                    Push-Fit Joint System
+                  </WidgetSublink>
+                  <WidgetLink
+                    onClick={
+                      title === "piping-technologies"
+                        ? () => smoothScroll(div4.current)
+                        : ""
+                    }
+                  >
+                    PEX Piping Systems <ArrowRight />
+                  </WidgetLink>
+                  <WidgetLink
+                    onClick={
+                      title === "piping-technologies"
+                        ? () => smoothScroll(div5.current)
+                        : ""
+                    }
+                  >
+                    Anti-UV Piping Systems <ArrowRight />
+                  </WidgetLink>
+                  <WidgetLink
+                    onClick={
+                      title === "piping-technologies"
+                        ? () => smoothScroll(div6.current)
+                        : ""
+                    }
+                  >
+                    Reinforced Piping Systems <ArrowRight />
+                  </WidgetLink>
+                </ProductRangeContainer>
+              </LeftPanel>
+
+              <RightPanel>
+                {title === "piping-technologies" && (
+                  <PipingTechnologies
+                    div1={div1}
+                    div2={div2}
+                    div3={div3}
+                    div4={div4}
+                    div5={div5}
+                    div6={div6}
+                  />
+                )}
+                {title === "piping-systems-usage" && <PipingSystemsUsage />}
+                {title === "ultimate-solutions" && <UltimateSolutions />}
+                {title === "raktherm-quality" && <RakthermQuality />}
+              </RightPanel>
+            </Wrapper>
+          </Container>
+        </SolutionsContent>
       </BannerPage>
       <SubFooter />
       <Footer />
