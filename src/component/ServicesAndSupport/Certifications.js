@@ -17,47 +17,69 @@ const Title = styled.div`
   color: #3a4d6a;
 `;
 
+const WidgetSubTitle = styled.div`
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11.62px;
+  font-weight: 700;
+  line-height: 18px;
+  margin: 25px 0px;
+  text-transform: uppercase;
+  color: #3a4d6a;
+`;
+
+const Image = styled.img`
+
+`
+
 const Certifications = () => {
   return (
     <>
       <Title>Certifications</Title>
+      <WidgetSubTitle>EXTENSIVE PRODUCT TESTING AND EVALUATION</WidgetSubTitle>
       <WidgetDetails>
-        RAKtherm- Gulf Plastic and Converting Industries is under the
-        flourishing arm of an illustrious group Hashim Industry, which was
-        established 1963. We are one of the region’s renowned business
-        conglomerates. RAKtherm is the flagship division and pioneer of
-        integrated PPR, PEX, anti-UV, Reinforced, and DVW piping systems.
+        Testing and evaluation is absolutely necessary for us to obtain product
+        optimization. Achieving a clear-cut product superiority to ensure brand
+        share dominancy in the industry and establish customer loyalty.
       </WidgetDetails>
+
+      <Title>
+        RAKTHERM CERTIFICATION CONFORMS TO GERMAN QUALITY STANDARD COMPRISES OF:
+      </Title>
+      <WidgetSubTitle>GERMAN ENGINEERING MACHINERIES</WidgetSubTitle>
       <WidgetDetails>
-        When foreign investments flourished in the region, a growing demand for
-        construction supplies arise. The group immediately responded to the
-        growing requirements of the industry and expands its product portfolio
-        to include RAKtherm piping systems in order to sustain the demand of the
-        construction sector.
+        We are equipped with German engineering machineries with
+        state-of-the-art technology. Our product innovation brings technological
+        advancement in the piping industry. Modern technology in our operation
+        is a growing necessity because it gives us new and better approach to
+        provide faster, more convenient and more efficient way to manufacture
+        products. Through this, productivity reaches a higher level allowing for
+        better products produced and faster services delivered to our increasing
+        customers. RAKtherm’s German machineries made it possible to have wider
+        reach in the global market.
       </WidgetDetails>
+
+      <WidgetSubTitle>TESTING AND CONFORMITY</WidgetSubTitle>
       <WidgetDetails>
-        Established over decades back, with a manufacturing facility and
-        corporate sales headquarter in the United Arab Emirates; RAKtherm is the
-        first and largest PPR and PEX systems manufacturer in the Middle East.
+        Being customer-focused industry, our piping systems undergoes critical
+        product testing to achieve product superiority by intensively monitoring
+        the quality. The areas of our concern are the consumers – their health,
+        product safety, and environment. For this reason, we require testing for
+        conformance with specifications and compliance for safety and other
+        standardization regulations. We ensure that each product meets relevant
+        design that gains consumer’s confidence over RAKtherm products.
       </WidgetDetails>
-      <Title>OUR LEADERSHIP</Title>
+
+      <WidgetSubTitle>GERMAN QUALIFICATION AND CERTIFICATION</WidgetSubTitle>
       <WidgetDetails>
-        “The most eminent high-end global manufacturer of piping systems
-        technology”
+        Tested, conformed, qualified, and certified by CSTB, DVGW, HY, SKZ,
+        CARSO, & TUV, conforming to the German standard of 8077/8078. RAKTherm
+        has passed the quality assurance and quality performance tests to ensure
+        that our products are suitable for global distribution and utilization.
       </WidgetDetails>
-      <WidgetDetails>
-        Throughout the years, RAKtherm is known for its world-class brand
-        delivering effective and efficient piping systems. With continuous
-        pursuance in finding solutions to the major challenges in the MEP
-        industry, we established ourselves highly recognized in the piping
-        industry. Our understanding to the technological quest in plastic piping
-        systems enables us to address these demanding challenges.{" "}
-      </WidgetDetails>
-      <WidgetDetails>
-        We are committed to making a real difference in providing
-        hi-technological piping innovations that are breakthrough in the
-        industry.
-      </WidgetDetails>
+
+      <Image src="https://www.raktherm.com/assets/images/2q-logos.jpg"/>
     </>
   );
 };

@@ -23,7 +23,7 @@ import {
 import { NavbarData } from "../assets/data/NavbarData";
 import { Link } from "react-router-dom";
 
-const Navbar = ({}) => {
+const Navbar = () => {
   const [offset, setOffset] = useState(0);
   const [isUpper, setIsUpper] = useState(true);
   const handleScroll = () => setOffset(window.pageYOffset);

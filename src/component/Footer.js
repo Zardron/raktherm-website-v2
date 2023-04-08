@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Title, Wrapper } from "../assets/styled/FooterStyle";
-import { ReactComponent as MySVG } from "../logo.svg";
 import ScrollToTop from "react-scroll-to-top";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 

@@ -6,6 +6,11 @@ import {
   OverlayText,
   OverlayTexts,
 } from "../assets/styled/HomeCarouselStyle";
+import styled from "styled-components";
+
+const Image = styled.img``;
+
+const Container = styled.div``;
 
 const HomeCarousel = () => {
   return (
@@ -18,8 +23,8 @@ const HomeCarousel = () => {
         showThumbs={false}
         stopOnHover={true}
       >
-        <div>
-          <img src="https://www.raktherm.com/assets/images/background/slider-banner-1.jpg" />
+        <Container>
+          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-1.jpg" />
           <OverlayText>
             <CarouselTitle>EMPOWERED BY EXPERIENCE AND EXPERTISE</CarouselTitle>
             <CarouselSubTitle>
@@ -27,21 +32,21 @@ const HomeCarousel = () => {
               boundaries in providing groundbreaking piping solutions.
             </CarouselSubTitle>
           </OverlayText>
-        </div>
-        <div>
-          <img src="https://www.raktherm.com/assets/images/background/slider-banner-3.jpg" />
+        </Container>
+        <Container>
+          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-3.jpg" />
           <OverlayText>
             <CarouselTitle>
               PERFORMING AT THE HEIGHT OF QUALITY EXCELLENCE
             </CarouselTitle>
             <CarouselSubTitle>
-              Longest lasting networks for extreme conditions and diversified
-              applications.
+              Longest lasting networks for extreme conditions and
+              Containerersified applications.
             </CarouselSubTitle>
           </OverlayText>
-        </div>
-        <div>
-          <img src="https://www.raktherm.com/assets/images/background/slider-banner-4.jpg" />
+        </Container>
+        <Container>
+          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-4.jpg" />
           <OverlayText>
             <CarouselTitle>
               UNFOLDS THE POTENTIALS IN PIPING SYSTEMS
@@ -50,9 +55,9 @@ const HomeCarousel = () => {
               To create versatile and comprehensive solutions.
             </CarouselSubTitle>
           </OverlayText>
-        </div>
-        <div>
-          <img src="https://www.raktherm.com/assets/images/background/slider-banner-5.jpg" />
+        </Container>
+        <Container>
+          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-5.jpg" />
           <OverlayText>
             <CarouselTitle>
               THE RAREFIED CONCEPT FOR NOISE-REDUCTION TECHNOLOGY
@@ -62,21 +67,21 @@ const HomeCarousel = () => {
               secret of ground-breaking RNP Technology.
             </CarouselSubTitle>
           </OverlayText>
-        </div>
-        <div>
-          <img src="https://www.raktherm.com/assets/images/background/slider-banner-2.jpg" />
+        </Container>
+        <Container>
+          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-2.jpg" />
           <OverlayText>
             <CarouselTitle>
-              ENGINEERED FOR DIVERSE AND COMPREHENSIVE SOLUTIONS
+              ENGINEERED FOR ContainerERSE AND COMPREHENSIVE SOLUTIONS
             </CarouselTitle>
             <CarouselSubTitle>
               Driven by innovation breakthroughs We exist to be a leader in
               everything we do!
             </CarouselSubTitle>
           </OverlayText>
-        </div>
-        <div>
-          <img src="https://www.raktherm.com/assets/images/background/slider-banner-6.jpg" />
+        </Container>
+        <Container>
+          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-6.jpg" />
           <OverlayTexts>
             <CarouselTitle>
               LONGEVOUS SEALING TECHNOLOGY REPRESENTS A NEW PARADIGM
@@ -85,7 +90,7 @@ const HomeCarousel = () => {
               In solvent-cement drainage systems.
             </CarouselSubTitle>
           </OverlayTexts>
-        </div>
+        </Container>
       </Carousel>
     </>
   );
