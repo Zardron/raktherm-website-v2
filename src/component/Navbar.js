@@ -19,8 +19,9 @@ import {
   UL,
   Menus,
   NavLinksss,
+  NavLinkssss,
 } from "../assets/styled/NavbarStyle";
-import { NavbarData } from "../assets/data/NavbarData";
+import { NavbarData, Navdata2 } from "../assets/data/NavbarData";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -60,6 +61,54 @@ const Navbar = () => {
             <UL>
               <Separator>|</Separator>
               {NavbarData.map((data, index) => (
+                <>
+                  <NavLinksss key={index}>
+                    <Label className={isUpper ? "" : "scrolled"}>
+                      {data.title}
+                      {data.isMenu && <CaretDown />}
+                    </Label>
+                    <DropDown>
+                      <Menu>
+                        {data.menu.map((subdata, key) => (
+                          <MenuItem key={key}>
+                            <Link to={`${subdata.link}`}>
+                              <MenuItemLabel>
+                                {subdata.title}{" "}
+                                {subdata.isSubMenu && <CaretDown />}
+                                {subdata.isSubMenu && (
+                                  <SubMenu>
+                                    <Menus>
+                                      {subdata.subMenu.map((datas, key) => (
+                                        <SubMenuItem key={key}>
+                                          <SubMenuItemLabel>
+                                            {datas.title}
+                                          </SubMenuItemLabel>
+                                        </SubMenuItem>
+                                      ))}
+                                    </Menus>
+                                  </SubMenu>
+                                )}
+                              </MenuItemLabel>
+                            </Link>
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </DropDown>
+                  </NavLinksss>
+                  <Separator>|</Separator>
+                </>
+              ))}
+              <NavLinkssss>
+                <Label className={isUpper ? "" : "scrolled"}>BLOGS</Label>
+              </NavLinkssss>
+              <Separator>|</Separator>
+              <NavLinkssss to="/raktherm-academy">
+                <Label className={isUpper ? "" : "scrolled"}>
+                  RAKTHERM ACADEMY
+                </Label>
+              </NavLinkssss>
+              <Separator>|</Separator>
+              {Navdata2.map((data, index) => (
                 <>
                   <NavLinksss key={index}>
                     <Label className={isUpper ? "" : "scrolled"}>

@@ -4,6 +4,7 @@ import AboutUs from "./pages/AboutUs";
 import Solutions from "./pages/Solutions";
 import Home from "./pages/Home";
 import ServicesAndSupport from "./pages/ServicesAndSupport";
+import RakthermAcademy from "./pages/RakthermAcademy";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/about-us/:title" element={<AboutUs />} />
         <Route path="/solutions/:title" element={<Solutions />} />
         <Route path="/services-and-support/:title" element={<ServicesAndSupport />} />
+        <Route path="/raktherm-academy" element={<RakthermAcademy />} />
       </Routes>
     </Router>
   );

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { SocialIcon } from "react-social-icons";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Container = styled.div`
   width: 1270px;
@@ -51,14 +52,16 @@ const WidgetImage = styled.img``;
 
 const Video = styled.iframe``;
 
-const FullName = styled.input`
+const TextField = styled.input`
+  font-weight: 400;
+  font-size: 14px;
   line-height: 40px;
   width: 100%;
   height: 40px;
   margin-bottom: 5px;
   padding: 0 11px 0px 15px;
   resize: none;
-  color: #61728d;
+  color: white;
   border: none;
   border: 1px solid #008053;
   -webkit-border-radius: 0;
@@ -69,6 +72,30 @@ const FullName = styled.input`
 
   :focus {
     outline: none;
+  }
+
+  ::placeholder {
+    color: #ffffffb3;
+    font-size: 14px;
+    font-weight: 400;
+  }
+`;
+
+export const Button = styled.button`
+  padding: 5px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  background-color: #008053;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  border: 2px solid #008053;
+
+  :hover {
+    color: #008053;
+    background-color: white;
+    border: 2px solid #008053;
   }
 `;
 
@@ -169,12 +196,28 @@ const SubFooter = () => {
         </Panel>
         <Panel>
           <TitleWidget>email newsletter</TitleWidget>
-          <WidgetDetails>
+          <WidgetDetails style={{ paddingBottom: "20px" }}>
             Please sign up for Our Newsletter. Subscribe us to receive news in
             your inbox.
           </WidgetDetails>
 
-          <FullName></FullName>
+          <TextField placeholder="Full Name"></TextField>
+          <TextField placeholder="Email Address"></TextField>
+          <div
+            className="captcha"
+            style={{
+              transform: "scale(.95)",
+              transformOrigin: "0 0",
+              marginBottom: "25px",
+            }}
+          >
+            <ReCAPTCHA
+              sitekey="6Lf5G3QlAAAAAJYR-SKAlgOMKmZTzhipc-KsCF2a"
+              size="normal"
+            />
+          </div>
+
+          <Button>SUBMIT</Button>
         </Panel>
       </Container>
     </Wrapper>

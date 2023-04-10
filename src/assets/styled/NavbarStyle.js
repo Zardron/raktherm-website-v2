@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { VscTriangleDown } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 export const Header = styled.header`
   display: flex;
@@ -97,6 +98,22 @@ export const SubMenu = styled.div`
 `;
 
 export const NavLinksss = styled.div`
+  position: relative;
+
+  :hover ${DropDown} {
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  :hover ${AccountDropDown} {
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+`;
+
+export const NavLinkssss = styled(Link)`
   position: relative;
 
   :hover ${DropDown} {

@@ -44,7 +44,7 @@ const BannerPage = styled.div`
 `;
 
 const Content = styled.div`
-  padding-top: 43vh;
+  padding-top: 41vh;
   border-bottom: 3px solid #008053;
   padding-bottom: 40px;
 `;
