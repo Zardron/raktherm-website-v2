@@ -142,3 +142,27 @@ export const SERVICES_AND_SUPPORT = [
     link: "guidelines",
   },
 ];
+
+export const RAKTHERM_WORLDWIDE = [
+  {
+    id: "1",
+    title: "Global Networks",
+    link: "global-networks",
+  },
+  {
+    id: "2",
+    title: "Mega Projects",
+    link: "mega-projects",
+  },
+  {
+    id: "3",
+    title: "Become Stockist",
+    link: "become-stockist",
+  },
+  {
+    id: "4",
+    title: "Join My RAKtherm",
+    link: "join-my-raktherm",
+  },
+];
+

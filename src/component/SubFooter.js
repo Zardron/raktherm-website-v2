@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { SocialIcon } from "react-social-icons";
 import ReCAPTCHA from "react-google-recaptcha";

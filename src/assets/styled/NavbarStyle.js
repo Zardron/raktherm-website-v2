@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { VscTriangleDown } from "react-icons/vsc";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export const Header = styled.header`
@@ -156,7 +156,8 @@ export const Separator = styled.span`
   color: #029447;
 `;
 
-export const CaretDown = styled(VscTriangleDown)`
+export const CaretDown = styled(MdOutlineKeyboardArrowDown)`
+  font-size: 14px;
   margin-left: 0.2rem;
   font-weight: bolder;
   color: #767272;

@@ -3,7 +3,8 @@ import { ImCheckmark } from "react-icons/im";
 import { ImFilePdf } from "react-icons/im";
 import { RiArrowDropRightLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import _BANNER from "../images/raktherm-academy-banner.jpg";
+import _BANNER from "../images/raktherm-worldwide-banner.jpg";
+import { BiRefresh } from "react-icons/bi";
 
 export const Container = styled.div`
   width: 1270px;
@@ -146,6 +147,10 @@ export const WidgetContent = styled.div`
   background-color: white;
 `;
 
+export const ProjectContent = styled.div`
+  background-color: #f4f8fe;
+`;
+
 export const WidgetLink = styled(Link)`
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -233,6 +238,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   margin-bottom: 50px;
   border: 2px solid #008053;
+  width: 10%;
 
   :hover {
     color: #008053;
@@ -273,5 +279,124 @@ export const PDFButton = styled.a`
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
+  }
+`;
+
+export const Image = styled.img``;
+
+export const InputField = styled.input`
+  font-family: "Montserrat", sans-serif;
+  line-height: 40px;
+  font-weight: 400;
+  font-size: 14px;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 5px;
+  padding: 0 11px 0px 15px;
+  resize: none;
+  color: #61728d;
+  border: none;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none !important;
+  transition: all 0.1s ease;
+
+  :focus {
+    outline: none;
+    border-top: 2px solid #008053;
+    border-left: 2px solid #008053;
+    border-right: 2px solid #008053;
+    border-bottom: 1px solid #008053a1;
+    transition: all 0.1s ease;
+  }
+`;
+
+export const TextArea = styled.textarea`
+  font-family: "Montserrat", sans-serif;
+  line-height: 40px;
+  font-weight: 400;
+  font-size: 14px;
+  width: 100%;
+  padding: 0 11px 0px 15px;
+  resize: none;
+  color: #61728d;
+  border: none;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none !important;
+  transition: all 0.1s ease;
+
+  :focus {
+    outline: none;
+    border-top: 2px solid #008053;
+    border-left: 2px solid #008053;
+    border-right: 2px solid #008053;
+    border-bottom: 1px solid #008053a1;
+    transition: all 0.1s ease;
+  }
+`;
+
+export const CaptchaContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Captcha = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  line-height: 40px;
+  font-weight: 400;
+  font-size: 14px;
+  width: 10%;
+  margin-bottom: 5px;
+  padding: 0 11px 0px 15px;
+  resize: none;
+  color: white;
+  border: none;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background-color: #008053;
+  box-shadow: none !important;
+  transition: all 0.1s ease;
+
+  :focus {
+    outline: none;
+    border-top: 2px solid #008053;
+    border-left: 2px solid #008053;
+    border-right: 2px solid #008053;
+    border-bottom: 1px solid #008053a1;
+    transition: all 0.1s ease;
+  }
+`;
+
+export const RefreshIcon = styled(BiRefresh)`
+  font-size: 32px;
+  color: white;
+`;
+
+export const RefreshButton = styled.button`
+  background-color: #008053;
+  padding: 2px 8px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  border: 2px solid #008053;
+
+  :hover {
+    background-color: white;
+    border: 2px solid #008053;
+
+    & ${RefreshIcon} {
+      color: #008053;
+    }
   }
 `;

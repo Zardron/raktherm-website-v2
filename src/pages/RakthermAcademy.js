@@ -4,7 +4,6 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SubFooter from "../component/SubFooter";
 import QuickLink from "../component/QuickLink";
-import { useParams } from "react-router-dom";
 import { ABOUT_US } from "../assets/data/WidgetData";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import {
@@ -40,7 +39,6 @@ import {
 } from "../assets/styled/RakthermAcademy";
 
 const RakthermAcademy = () => {
-  const { title } = useParams();
   return (
     <>
       <TopBar />

@@ -108,19 +108,19 @@ export const Navdata2 = [
     menu: [
       {
         title: "Global Networks",
-        link: "",
+        link: "/raktherm-worldwide/global-networks",
       },
       {
         title: "Mega Projects",
-        link: "",
+        link: "/raktherm-worldwide/mega-projects",
       },
       {
         title: "Become Stockist",
-        link: "",
+        link: "/raktherm-worldwide/become-stockist",
       },
       {
         title: "Join My RAKtherm",
-        link: "",
+        link: "/raktherm-worldwide/join-my-raktherm",
       },
     ],
   },

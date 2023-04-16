@@ -20,15 +20,12 @@ import {
 
 const Welding = () => {
   const [isActive, setIsActive] = useState(null);
-  const [data, setData] = useState(null);
-
   const openAccordion = (index) => {
     if (isActive === index) {
       return setIsActive(null);
     }
 
     setIsActive(index);
-    setData(index);
   };
   return (
     <>
