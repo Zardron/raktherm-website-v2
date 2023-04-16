@@ -130,11 +130,11 @@ export const Navdata2 = [
     menu: [
       {
         title: "Meet Our Team",
-        link: "",
+        link: "/contacts/meet-our-team",
       },
       {
         title: "Join Our Team",
-        link: "",
+        link: "/contacts/join-our-team",
       },
     ],
   },
