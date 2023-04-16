@@ -3,12 +3,12 @@ export const QUICK_LINK = [
   {
     id: "1",
     title: "Join MyRAKtherm",
-    link: "/join-my-raktherm",
+    link: "/raktherm-worldwide/join-my-raktherm",
   },
   {
     id: "2",
     title: "Get Local Support",
-    link: "/get-local-support",
+    link: "/services-and-support/guidelines",
   },
   {
     id: "3",
@@ -18,12 +18,12 @@ export const QUICK_LINK = [
   {
     id: "4",
     title: "Download Brochures",
-    link: "/download-brochures",
+    link: "/services-and-support/catalogues-and-downloads",
   },
   {
     id: "5",
     title: "Join RAKtherm Academy",
-    link: "/join-raktherm-academy",
+    link: "/raktherm-academy",
   },
   {
     id: "6",
@@ -165,4 +165,23 @@ export const RAKTHERM_WORLDWIDE = [
     link: "join-my-raktherm",
   },
 ];
+
+export const RAKTHERM_WORLDWIDE_CONTACT = [
+  {
+    id: "1",
+    title: "Global Networks",
+    link: "global-networks",
+  },
+  {
+    id: "2",
+    title: "Mega Projects",
+    link: "mega-projects",
+  },
+  {
+    id: "3",
+    title: "Become Stockist",
+    link: "become-stockist",
+  },
+];
+
 

@@ -19,10 +19,18 @@ import {
   AboutUsDetails,
   GetInTouchDetails,
   WidgetContent,
+  Wrapper,
+  LeftPanel,
+  WidgetTitle,
+  WidgetLink,
+  ArrowRight,
+  RightPanel,
 } from "../assets/styled/ContactStyle";
 import { useParams } from "react-router-dom";
 import MeetOurTeam from "../component/ContactUs/MeetOurTeam";
 import JoinOurTeam from "../component/ContactUs/JoinOurTeam";
+import QuickLink from "../component/QuickLink";
+import { RAKTHERM_WORLDWIDE_CONTACT } from "../assets/data/WidgetData";
 
 const Contacts = () => {
   const { title } = useParams();
@@ -38,7 +46,8 @@ const Contacts = () => {
               <AboutUsDetails>
                 <BannerTitleWrapper>
                   <BannerTitle>
-                    <BannerTitleLine>|</BannerTitleLine>Contact us
+                    <BannerTitleLine>|</BannerTitleLine>
+                    {title === "join-our-team" ? "JOIN OUR TEAM" : "Contact us"}
                   </BannerTitle>
                 </BannerTitleWrapper>
               </AboutUsDetails>
@@ -52,16 +61,41 @@ const Contacts = () => {
               <Arrow>
                 <MdOutlineKeyboardArrowRight />
               </Arrow>{" "}
-              <ActiveLink>Contacts</ActiveLink>
+              <ActiveLink>
+                {title === "join-our-team" ? "Join our Team" : "Contact us"}
+              </ActiveLink>
             </HomeLink>
           </Content>
         </Container>
 
         <WidgetContent>
-          <Container style={{ paddingBottom: "50px" }}>
-            {title === "meet-our-team" && <MeetOurTeam />}
-            {title === "join-our-team" && <JoinOurTeam />}
-          </Container>
+          {title === "meet-our-team" && <MeetOurTeam />}
+          {title === "join-our-team" && (
+            <Container style={{ paddingBottom: "50px" }}>
+              <Wrapper>
+                <LeftPanel>
+                  <WidgetTitle>RAKTHERM WORLDWIDE</WidgetTitle>
+                  {RAKTHERM_WORLDWIDE_CONTACT.map((item, index) => (
+                    <>
+                      <WidgetLink
+                        to={`/raktherm-worldwide/${item.link}`}
+                        key={index}
+                      >
+                        {item.title}
+                        <ArrowRight />
+                      </WidgetLink>
+                    </>
+                  ))}
+
+                  {title === "mega-projects" ? "" : <QuickLink />}
+                </LeftPanel>
+
+                <RightPanel>
+                  {title === "join-our-team" && <JoinOurTeam />}
+                </RightPanel>
+              </Wrapper>
+            </Container>
+          )}
         </WidgetContent>
       </BannerPage>
       <SubFooter />

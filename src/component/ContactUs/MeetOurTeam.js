@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
+export const Container = styled.div`
+  width: 1270px;
+  margin-right: auto;
+  margin-left: auto;
+`;
 
 const TitleWrapper = styled.div`
   display: flex;
@@ -55,99 +62,349 @@ const MainContact = styled.div`
 const MeetOurTeam = () => {
   return (
     <>
-      <TitleWrapper>
-        <LineTitle>|</LineTitle>
-        <Title>MEET OUR TEAM</Title>
-      </TitleWrapper>
-      <Div>
-        <ItalicText>
-          We Want To Hear From You! Whether You Have An Inquiry, Feedback, Or
-          Simply Wants To Learn From Us…
-        </ItalicText>
-      </Div>
+      <Container>
+        <TitleWrapper>
+          <LineTitle>|</LineTitle>
+          <Title>MEET OUR TEAM</Title>
+        </TitleWrapper>
+        <Div>
+          <ItalicText>
+            We Want To Hear From You! Whether You Have An Inquiry, Feedback, Or
+            Simply Wants To Learn From Us…
+          </ItalicText>
+        </Div>
 
-      <MainContact>
-        <div class="list-contact-info" style={{ padding: "20px 15px" }}>
-          <h5 class="title">Corporate Sales Head Quarter and Technical Hub</h5>
-          <div class="item">
-            <div class="contact-info-box">
-              <div class="contact-info-cell">
-                <div
-                  class="wrapper-icons"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <FaMapMarkerAlt className="icons" />
-                </div>
-              </div>
-              <div class="contact-info-cell">
-                <div class="wrapper-info">
-                  <p class="text" style={{ fontWeight: "500" }}>
-                    PO Box 30739,
-                    <br /> Al Jazeera Al Hamra,
-                    <br /> Ras al Khaimah,
-                    <br /> United Arab Emirates
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="contact-info-box">
-              <div class="contact-info-cell">
-                <div
-                  class="wrapper-icons"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <FaMapMarkerAlt className="icons" />
-                </div>
-              </div>
-              <div class="contact-info-cell">
-                <div class="wrapper-info">
-                  <div class="text" style={{ fontWeight: "500" }}>
-                    Trunk line:
-                    <a href="tel:00971 7 244 7128" class="text-bold">
-                      00971 7 244 7128
-                    </a>
+        <MainContact>
+          <div className="list-contact-info" style={{ padding: "20px 15px" }}>
+            <h5 className="title">
+              Corporate Sales Head Quarter and Technical Hub
+            </h5>
+            <div className="item">
+              <div className="contact-info-box">
+                <div className="contact-info-cell">
+                  <div
+                    className="wrapper-icons"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FaMapMarkerAlt className="icons" />
                   </div>
-                  <div class="text" style={{ fontWeight: "500" }}>
-                    Toll Free:
-                    <a href="tel:00971 7 244 7128" class="text-bold">
-                      800 - RAKTHERM (72584376)
-                    </a>
+                </div>
+                <div className="contact-info-cell">
+                  <div className="wrapper-info">
+                    <p className="text" style={{ fontWeight: "500" }}>
+                      PO Box 30739,
+                      <br /> Al Jazeera Al Hamra,
+                      <br /> Ras al Khaimah,
+                      <br /> United Arab Emirates
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+            <div className="item">
+              <div className="contact-info-box">
+                <div className="contact-info-cell">
+                  <div
+                    className="wrapper-icons"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FaMapMarkerAlt className="icons" />
+                  </div>
+                </div>
+                <div className="contact-info-cell">
+                  <div className="wrapper-info">
+                    <div className="text" style={{ fontWeight: "500" }}>
+                      Trunk line:
+                      <a href="tel:00971 7 244 7128" className="text-bold">
+                        00971 7 244 7128
+                      </a>
+                    </div>
+                    <div className="text" style={{ fontWeight: "500" }}>
+                      Toll Free:
+                      <a href="tel:00971 7 244 7128" className="text-bold">
+                        800 - RAKTHERM (72584376)
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div class="item">
-            <div class="contact-info-box">
-              <div class="contact-info-cell">
+            <div className="item">
+              <div className="contact-info-box">
+                <div className="contact-info-cell">
+                  <div
+                    className="wrapper-icons"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <FaMapMarkerAlt className="icons" />
+                  </div>
+                </div>
+                <div className="contact-info-cell">
+                  <div className="wrapper-info">
+                    <div className="text" style={{ fontWeight: "500" }}>
+                      Fax:
+                      <a href="tel:00971 7 244 7128" className="text-bold">
+                        00971 7 244 7129
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </MainContact>
+      </Container>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14387.103492697215!2d55.78442!3d25.6455631!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5e1c0d9eb05e5%3A0xaf76a50cba5127ea!2sGulf%20Plastic%20%26%20Converting%20Industries%20(Head%20Office%2FFactory)!5e0!3m2!1sen!2sae!4v1681633953622!5m2!1sen!2sae"
+        width="100%"
+        height="550"
+        style={{ border: "0" }}
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+      <Container>
+        <div className="list-contact-info" style={{padding: "50px 15px 50px 15px"}}>
+          <div className="item">
+            <div className="contact-info-box">
+              <div className="contact-info-cell">
                 <div
-                  class="wrapper-icons"
+                  className="wrapper-icons"
                   style={{
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
                 >
-                  <FaMapMarkerAlt className="icons" />
+                  <MdEmail className="icons" />
                 </div>
               </div>
-              <div class="contact-info-cell">
-                <div class="wrapper-info">
-                  <div class="text" style={{ fontWeight: "500" }}>
-                    Fax:
-                    <a href="tel:00971 7 244 7128" class="text-bold">
-                      00971 7 244 7129
+              <div className="contact-info-cell">
+                <div className="wrapper-info">
+                  <div className="text">
+                    Corporate Sales & Marketing Department
+                    <a href="mailto:sales@raktherm.com" className="text-bold">
+                      sales@raktherm.com
+                    </a>
+                  </div>
+                  <div className="text">
+                    <a
+                      href="mailto:marketing@raktherm.com"
+                      className="text-bold"
+                    >
+                      marketing@raktherm.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="contact-info-box">
+              <div className="contact-info-cell">
+                <div
+                  className="wrapper-icons"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <MdEmail className="icons" />
+                </div>
+              </div>
+              <div className="contact-info-cell">
+                <div className="wrapper-info">
+                  <div className="text">
+                    RAKtherm Global Academy:
+                    <a href="mailto:academy@raktherm.com" className="text-bold">
+                      academy@raktherm.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="contact-info-box">
+              <div className="contact-info-cell">
+                <div
+                  className="wrapper-icons"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <MdEmail className="icons" />
+                </div>
+              </div>
+              <div className="contact-info-cell">
+                <div className="wrapper-info">
+                  <div className="text">
+                    Customer Service
+                    <a
+                      href="mailto:customerservices@raktherm.com"
+                      className="text-bold"
+                    >
+                      customerservices@raktherm.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="contact-info-box">
+              <div className="contact-info-cell">
+                <div
+                  className="wrapper-icons"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <MdEmail className="icons" />
+                </div>
+              </div>
+              <div className="contact-info-cell">
+                <div className="wrapper-info">
+                  <div className="text">
+                    Technical Department
+                    <a
+                      href="mailto:Tech.dept@raktherm.com"
+                      className="text-bold"
+                    >
+                      Tech.dept@raktherm.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="contact-info-box">
+              <div className="contact-info-cell">
+                <div
+                  className="wrapper-icons"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <MdEmail className="icons" />
+                </div>
+              </div>
+              <div className="contact-info-cell">
+                <div className="wrapper-info">
+                  <div className="text">
+                    Finance Department
+                    <a href="mailto:finance@raktherm.com" className="text-bold">
+                      finance@raktherm.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="contact-info-box">
+              <div className="contact-info-cell">
+                <div
+                  className="wrapper-icons"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <MdEmail className="icons" />
+                </div>
+              </div>
+              <div className="contact-info-cell">
+                <div className="wrapper-info">
+                  <div className="text">
+                    Research & Development Department
+                    <a href="mailto:rd@raktherm.com" className="text-bold">
+                      rd@raktherm.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="contact-info-box">
+              <div className="contact-info-cell">
+                <div
+                  className="wrapper-icons"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <MdEmail className="icons" />
+                </div>
+              </div>
+              <div className="contact-info-cell">
+                <div className="wrapper-info">
+                  <div className="text">
+                    Purchase Department
+                    <a
+                      href="mailto:purchase@raktherm.com"
+                      className="text-bold"
+                    >
+                      purchase@raktherm.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="item">
+            <div className="contact-info-box">
+              <div className="contact-info-cell">
+                <div
+                  className="wrapper-icons"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <MdEmail className="icons" />
+                </div>
+              </div>
+              <div className="contact-info-cell">
+                <div className="wrapper-info">
+                  <div className="text">
+                    HR Department
+                    <a href="mailto:hr@raktherm.com" className="text-bold">
+                      hr@raktherm.com
                     </a>
                   </div>
                 </div>
@@ -155,7 +412,7 @@ const MeetOurTeam = () => {
             </div>
           </div>
         </div>
-      </MainContact>
+      </Container>
     </>
   );
 };
