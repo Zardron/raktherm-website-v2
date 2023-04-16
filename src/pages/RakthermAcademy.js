@@ -39,6 +39,8 @@ import {
 } from "../assets/styled/RakthermAcademy";
 
 const RakthermAcademy = () => {
+  const loggedIn = false;
+
   return (
     <>
       <TopBar />
@@ -173,13 +175,13 @@ const RakthermAcademy = () => {
                   BE AN EXPERT AND REGISTER NOW!
                 </WidgetSubTitle>
 
-                <Button>Register Now</Button>
+                <Button to={loggedIn ? "/profile" : "/account"}>Register Now</Button>
 
-                <WidgetDetails>
+                <WidgetDetails style={{marginTop: "50px"}}>
                   For further information contact RAKtherm Academy at:
                   academy@raktherm.com
                 </WidgetDetails>
-                <PDFButton>
+                <PDFButton href="https://www.raktherm.com/pdf/global-academy-flyer.png" target="_blank">
                   <PDF />
                   RAKTHERM ACADEMY FLYER
                 </PDFButton>

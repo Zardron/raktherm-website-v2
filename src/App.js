@@ -7,6 +7,7 @@ import ServicesAndSupport from "./pages/ServicesAndSupport";
 import RakthermAcademy from "./pages/RakthermAcademy";
 import RakthermWorldwide from "./pages/RakthermWorldwide";
 import Contacts from "./pages/Contacts";
+import Account from "./pages/Account";
 
 function App() {
   return (
@@ -15,10 +16,17 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about-us/:title" element={<AboutUs />} />
         <Route path="/solutions/:title" element={<Solutions />} />
-        <Route path="/services-and-support/:title" element={<ServicesAndSupport />} />
+        <Route
+          path="/services-and-support/:title"
+          element={<ServicesAndSupport />}
+        />
         <Route path="/raktherm-academy" element={<RakthermAcademy />} />
-        <Route path="/raktherm-worldwide/:title" element={<RakthermWorldwide />} />
+        <Route
+          path="/raktherm-worldwide/:title"
+          element={<RakthermWorldwide />}
+        />
         <Route path="/contacts/:title" element={<Contacts />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
   );

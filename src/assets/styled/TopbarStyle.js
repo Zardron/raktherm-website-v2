@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const TopBarContainer = styled.div`
@@ -14,7 +15,7 @@ export const Topbar = styled.div`
   background-color: #949494;
 `;
 
-export const SignUp = styled.a`
+export const SignUp = styled(Link)`
   color: white;
   float: right;
   font-family: "Montserrat", sans-serif;

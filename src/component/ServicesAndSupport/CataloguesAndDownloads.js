@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ImFilePdf } from "react-icons/im";
 import { CATALOGUES } from "../../assets/data/CatalogueData";
+import { Link } from "react-router-dom";
 
 const WidgetDetails = styled.div`
   font-size: 14px;
@@ -35,7 +36,7 @@ const PDF = styled(ImFilePdf)`
   margin-right: 20px;
 `;
 
-const PDFButton = styled.a`
+const PDFButton = styled(Link)`
   display: flex;
   align-items: center;
   font-size: 12px;
@@ -65,6 +66,8 @@ const PDFButton = styled.a`
 `;
 
 const CataloguesAndDownloads = () => {
+  const loggedIn = false;
+
   return (
     <>
       <Title>CATALOGUES & DOWNLOADS</Title>
@@ -79,7 +82,7 @@ const CataloguesAndDownloads = () => {
       </SubTitle>
 
       {CATALOGUES.map((data) => (
-        <PDFButton>
+        <PDFButton to={loggedIn ? "/profile" : "/account"}>
           <PDF />
           {data.name}
         </PDFButton>
