@@ -1,5 +1,4 @@
 import React from "react";
-import { SignUp, Topbar } from "../assets/styled/TopbarStyle";
 import Navbar from "../component/Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -10,22 +9,15 @@ import HomeCarousel from "../component/HomeCarousel";
 import HomeContent from "../component/HomeContent";
 import SubFooter from "../component/SubFooter";
 import Footer from "../component/Footer";
+import TopBar from "../component/TopBar";
 
 const Home = () => {
   return (
     <>
-      <Topbar>
-        <div class="containers" style={{ padding: "5px 25px" }}>
-          <SignUp>Sign up to Join My RAKtherm</SignUp>
-        </div>
-      </Topbar>
-      <div class="containers">
-        <Navbar />
-      </div>
+      <TopBar />
+      <Navbar />
       <HomeCarousel />
-      <div className="containers">
-        <VideoCarousel overlay={OVERLAY} video={Video1} />
-      </div>
+      <VideoCarousel overlay={OVERLAY} video={Video1} />
       <HomeContent />
       <SubFooter />
       <Footer />

@@ -44,6 +44,21 @@
     <title>RAKtherm Ultimate Piping Solutions</title>
 
     <style>
+      .sticky {
+        position: fixed;
+        top: 0;
+        height: 100px !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+
+      .scrolled {
+        line-height: 100px !important;
+      }
+
       .arrow {
         font-size: 50px;
         padding: 5px 15px;
@@ -61,11 +76,6 @@
         left: -20px;
       }
 
-      .containers {
-        margin-right: auto;
-        margin-left: auto;
-      }
-
       .video-container {
         display: flex;
         align-items: center;
@@ -81,47 +91,26 @@
         margin: 50px;
       }
 
-      @media (min-width: 768px) {
-        .containers {
-          width: 750px;
-        }
-      }
-
-      @media (min-width: 992px) {
-        .containers {
-          width: 970px;
-        }
-      }
-
-      @media (min-width: 1200px) {
-        .containers {
-          width: 1270px;
-        }
-      }
-
-      .sticky {
-        position: fixed;
-        top: 0;
-      }
-
       .social-container {
         width: 75% !important;
         height: 75% !important;
       }
+
+      .accordion-item {
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+        height: auto;
+        max-height: 9999px;
+      }
+      .accordion-item.collapsed {
+        max-height: 0;
+        transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+      }
+
     </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

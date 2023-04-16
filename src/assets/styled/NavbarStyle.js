@@ -1,19 +1,26 @@
 import styled from "styled-components";
-import { VscTriangleDown } from "react-icons/vsc";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export const Header = styled.header`
+  display: flex;
+  align-items: center;
   background-color: white;
-  width: 100%;
-  z-index: 99;
+  height: 130px;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 `;
 
 export const Container = styled.div`
-  top: 0;
-  margin: 0 auto;
+  width: 1270px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   position: relative;
   background-color: white;
-  height: 100px;
 `;
 
 export const LogoContainer = styled.div`
@@ -45,6 +52,7 @@ export const DropDown = styled.div`
   box-shadow: 3px 6px 14px #00000019;
   /* border-top: 1px solid #029447; */
   transition: all 0.3s ease-out;
+  z-index: 99;
 `;
 
 export const AccountDropDown = styled.div`
@@ -105,6 +113,22 @@ export const NavLinksss = styled.div`
   }
 `;
 
+export const NavLinkssss = styled(Link)`
+  position: relative;
+
+  :hover ${DropDown} {
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  :hover ${AccountDropDown} {
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+`;
+
 export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -132,7 +156,8 @@ export const Separator = styled.span`
   color: #029447;
 `;
 
-export const CaretDown = styled(VscTriangleDown)`
+export const CaretDown = styled(MdOutlineKeyboardArrowDown)`
+  font-size: 14px;
   margin-left: 0.2rem;
   font-weight: bolder;
   color: #767272;
@@ -144,7 +169,7 @@ export const Label = styled.a`
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 700;
-  line-height: 100px;
+  line-height: 130px;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 1px;
