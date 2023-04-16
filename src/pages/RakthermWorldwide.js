@@ -29,11 +29,14 @@ import {
   WidgetContent,
   WidgetLink,
   ProjectContent,
+  BannerPages,
 } from "../assets/styled/RakthermWorldwide";
 import GlobalNetworks from "../component/RakthermWorldwide/GlobalNetworks";
 import MegaProjects from "../component/RakthermWorldwide/MegaProjects";
 import MegaProjectDetails from "../component/RakthermWorldwide/MegaProjectDetails";
 import BecomeStockist from "../component/RakthermWorldwide/BecomeStockist";
+import JoinMyRaktherm from "../component/RakthermWorldwide/JoinMyRaktherm";
+import DownloadFooter from "../component/DownloadFooter";
 
 const RakthermWorldwide = () => {
   const { title } = useParams();
@@ -41,69 +44,108 @@ const RakthermWorldwide = () => {
     <>
       <TopBar />
       <Navbar />
-      <BannerPage>
-        <Container>
-          <Content>
-            <AboutUsWrapper>
-              <AboutUsDetails>
-                <BannerTitleWrapper>
-                  <BannerTitle>
-                    <BannerTitleLine>|</BannerTitleLine>RAKTHERM Worldwide
-                  </BannerTitle>
-                </BannerTitleWrapper>
-              </AboutUsDetails>
-              <GetInTouchDetails>
-                <GetInTouch>GET IN TOUCH</GetInTouch>
-              </GetInTouchDetails>
-            </AboutUsWrapper>
+      {title === "join-my-raktherm" ? (
+        <>
+          <BannerPages>
+            <Container>
+              <Content>
+                <AboutUsWrapper>
+                  <AboutUsDetails>
+                    <BannerTitleWrapper>
+                      <BannerTitle>
+                        <BannerTitleLine>|</BannerTitleLine>My Raktherm
+                      </BannerTitle>
+                    </BannerTitleWrapper>
+                  </AboutUsDetails>
+                  <GetInTouchDetails>
+                    <GetInTouch>GET IN TOUCH</GetInTouch>
+                  </GetInTouchDetails>
+                </AboutUsWrapper>
 
-            <HomeLink to="/">
-              Home{" "}
-              <Arrow>
-                <MdOutlineKeyboardArrowRight />
-              </Arrow>{" "}
-              <ActiveLink>RAKtherm Worldwide</ActiveLink>
-            </HomeLink>
-          </Content>
-        </Container>
-
-        <WidgetContent>
-          <Container>
-            <Wrapper>
-              <LeftPanel>
-                <WidgetTitle>RAKTHERM WORLDWIDE</WidgetTitle>
-                {RAKTHERM_WORLDWIDE.map((item, index) => (
-                  <>
-                    <WidgetLink
-                      to={`/raktherm-worldwide/${item.link}`}
-                      key={index}
-                    >
-                      {item.title}
-                      <ArrowRight />
-                    </WidgetLink>
-                  </>
-                ))}
-
-                {title === "mega-projects" ? "" : <QuickLink />}
-              </LeftPanel>
-
-              <RightPanel>
-                {title === "global-networks" && <GlobalNetworks />}
-                {title === "mega-projects" && <MegaProjects />}
-                {title === "become-stockist" && <BecomeStockist />}
-              </RightPanel>
-            </Wrapper>
-          </Container>
-        </WidgetContent>
-
-        {title === "mega-projects" && (
-          <ProjectContent>
-            <Container  style={{paddingTop: "25px"}}>
-              <MegaProjectDetails />
+                <HomeLink to="/">
+                  Home{" "}
+                  <Arrow>
+                    <MdOutlineKeyboardArrowRight />
+                  </Arrow>{" "}
+                  <ActiveLink>My RAKtherm</ActiveLink>
+                </HomeLink>
+              </Content>
             </Container>
-          </ProjectContent>
-        )}
-      </BannerPage>
+
+            <WidgetContent>
+              <Container style={{ paddingBottom: "50px" }}>
+                <JoinMyRaktherm />
+              </Container>
+            </WidgetContent>
+          </BannerPages>
+          <DownloadFooter />
+        </>
+      ) : (
+        <BannerPage>
+          <Container>
+            <Content>
+              <AboutUsWrapper>
+                <AboutUsDetails>
+                  <BannerTitleWrapper>
+                    <BannerTitle>
+                      <BannerTitleLine>|</BannerTitleLine>RAKTHERM Worldwide
+                    </BannerTitle>
+                  </BannerTitleWrapper>
+                </AboutUsDetails>
+                <GetInTouchDetails>
+                  <GetInTouch>GET IN TOUCH</GetInTouch>
+                </GetInTouchDetails>
+              </AboutUsWrapper>
+
+              <HomeLink to="/">
+                Home{" "}
+                <Arrow>
+                  <MdOutlineKeyboardArrowRight />
+                </Arrow>{" "}
+                <ActiveLink>RAKtherm Worldwide</ActiveLink>
+              </HomeLink>
+            </Content>
+          </Container>
+
+          <WidgetContent>
+            <Container>
+              <Wrapper>
+                <LeftPanel>
+                  <WidgetTitle>RAKTHERM WORLDWIDE</WidgetTitle>
+                  {RAKTHERM_WORLDWIDE.map((item, index) => (
+                    <>
+                      <WidgetLink
+                        to={`/raktherm-worldwide/${item.link}`}
+                        key={index}
+                      >
+                        {item.title}
+                        <ArrowRight />
+                      </WidgetLink>
+                    </>
+                  ))}
+
+                  {title === "mega-projects" ? "" : <QuickLink />}
+                </LeftPanel>
+
+                <RightPanel>
+                  {title === "global-networks" && <GlobalNetworks />}
+                  {title === "mega-projects" && <MegaProjects />}
+                  {title === "become-stockist" && <BecomeStockist />}
+                </RightPanel>
+              </Wrapper>
+            </Container>
+          </WidgetContent>
+
+          {title === "mega-projects" && (
+            <ProjectContent>
+              <Container style={{ paddingTop: "25px" }}>
+                <MegaProjectDetails />
+              </Container>
+            </ProjectContent>
+          )}
+        </BannerPage>
+      )}
+
       <SubFooter />
       <Footer />
     </>

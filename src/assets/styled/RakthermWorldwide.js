@@ -4,6 +4,7 @@ import { ImFilePdf } from "react-icons/im";
 import { RiArrowDropRightLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import _BANNER from "../images/raktherm-worldwide-banner.jpg";
+import __BANNER from "../images/my-raktherm-banner.jpg";
 import { BiRefresh } from "react-icons/bi";
 
 export const Container = styled.div`
@@ -30,6 +31,13 @@ export const RightPanel = styled.div`
 
 export const BannerPage = styled.div`
   background-image: url(${_BANNER});
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+`;
+
+export const BannerPages = styled.div`
+  background-image: url(${__BANNER});
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -178,6 +186,7 @@ export const WidgetLink = styled(Link)`
 `;
 
 export const WidgetDetails = styled.div`
+  font-weight: 500;
   font-size: 14px;
   margin-bottom: 25px;
   color: #61728d;
@@ -239,6 +248,24 @@ export const Button = styled.button`
   margin-bottom: 50px;
   border: 2px solid #008053;
   width: 10%;
+
+  :hover {
+    color: #008053;
+    background-color: white;
+    border: 2px solid #008053;
+  }
+`;
+
+export const JoinMyRakthermBtn = styled(Link)`
+  padding: 6px 15px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  background-color: #008053;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  border: 2px solid #008053;
 
   :hover {
     color: #008053;
@@ -399,4 +426,11 @@ export const RefreshButton = styled.button`
       color: #008053;
     }
   }
+`;
+
+export const Download = styled.div`
+  background-image: url("https://www.raktherm.com/assets/images/background/download.jpg");
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: cover;
 `;
