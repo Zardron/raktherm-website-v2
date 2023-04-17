@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/Zardron/raktherm-website-v2#readme",
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3"
   },
   "devDependencies": {
