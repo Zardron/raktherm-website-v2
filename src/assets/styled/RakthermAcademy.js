@@ -70,6 +70,10 @@ export const HomeLink = styled(Link)`
   font-family: "Montserrat", sans-serif;
   color: #d4e3ee;
   font-size: 14px;
+
+  :hover {
+   color: #d4e3ee
+  }
 `;
 
 export const Arrow = styled.span`

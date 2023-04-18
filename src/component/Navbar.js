@@ -98,7 +98,7 @@ const Navbar = () => {
                   <Separator>|</Separator>
                 </>
               ))}
-              <NavLinkssss>
+              <NavLinkssss to="/blogs">
                 <Label className={isUpper ? "" : "scrolled"}>BLOGS</Label>
               </NavLinkssss>
               <Separator>|</Separator>
