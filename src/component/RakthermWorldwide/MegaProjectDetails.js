@@ -39,7 +39,17 @@ const MegaProjectContainer = styled.div`
   padding-bottom: 50px;
 `;
 
-const Div = styled.div``;
+const Items = styled.div`
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  padding: 10px !important;
+  margin: 8.5px !important;
+`;
+
+const Div = styled.div`
+  & ${Items}:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  }
+`;
 
 const MegaProjectDetails = () => {
   return (
@@ -55,7 +65,7 @@ const MegaProjectDetails = () => {
       <MegaProjectContainer>
         <Div className="gallery-image-grid">
           {MEGA_PROJECT.map((data, index) => (
-            <Div className="grid-item tab-1" key={index}>
+            <Items className="grid-item tab-1" key={index}>
               <a href="">
                 <Div className="block-image-gallery">
                   <img src={data.src} alt="" className="img-full" />
@@ -69,7 +79,7 @@ const MegaProjectDetails = () => {
                   </a>
                 </Div>
               </a>
-            </Div>
+            </Items>
           ))}
         </Div>
       </MegaProjectContainer>

@@ -80,6 +80,10 @@ const HomeLink = styled(Link)`
   font-family: "Montserrat", sans-serif;
   color: #d4e3ee;
   font-size: 14px;
+
+  :hover {
+   color: #d4e3ee
+  }
 `;
 
 const Arrow = styled.span`
@@ -157,6 +161,7 @@ const WidgetContent = styled.div`
 `;
 
 const WidgetLink = styled(Link)`
+font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;

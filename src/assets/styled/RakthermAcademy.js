@@ -70,6 +70,10 @@ export const HomeLink = styled(Link)`
   font-family: "Montserrat", sans-serif;
   color: #d4e3ee;
   font-size: 14px;
+
+  :hover {
+   color: #d4e3ee
+  }
 `;
 
 export const Arrow = styled.span`
@@ -147,6 +151,7 @@ export const WidgetContent = styled.div`
 `;
 
 export const WidgetLink = styled(Link)`
+font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;
@@ -173,12 +178,15 @@ export const WidgetLink = styled(Link)`
 `;
 
 export const WidgetDetails = styled.div`
+text-align: justify;
+font-weight: 500;
   font-size: 14px;
   margin-bottom: 25px;
   color: #61728d;
 `;
 
 export const Details = styled.div`
+font-weight: 500;
   width: 98%;
   display: flex;
   font-size: 14px;
@@ -223,7 +231,7 @@ export const Check = styled(ImCheckmark)`
   font-weight: 900;
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   padding: 6px 15px;
   margin-bottom: 0;
   font-size: 14px;

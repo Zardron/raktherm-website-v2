@@ -15,7 +15,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   padding-top: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   display: flex;
 `;
 
@@ -79,6 +79,10 @@ export const HomeLink = styled(Link)`
   font-family: "Montserrat", sans-serif;
   color: #d4e3ee;
   font-size: 14px;
+
+  :hover {
+   color: #d4e3ee
+  }
 `;
 
 export const Arrow = styled.span`
@@ -160,6 +164,7 @@ export const ProjectContent = styled.div`
 `;
 
 export const WidgetLink = styled(Link)`
+font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;
@@ -190,6 +195,7 @@ export const WidgetDetails = styled.div`
   font-size: 14px;
   margin-bottom: 25px;
   color: #61728d;
+  text-align: justify;
 `;
 
 export const Details = styled.div`
@@ -265,6 +271,23 @@ export const JoinMyRakthermBtn = styled(Link)`
   background-color: #008053;
   text-transform: uppercase;
   margin-bottom: 50px;
+  border: 2px solid #008053;
+
+  :hover {
+    color: #008053;
+    background-color: white;
+    border: 2px solid #008053;
+  }
+`;
+
+export const JoinBtn = styled(Link)`
+  padding: 6px 15px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  background-color: #008053;
+  text-transform: uppercase;
   border: 2px solid #008053;
 
   :hover {

@@ -29,9 +29,10 @@ const TitleWidget = styled.div`
 `;
 
 const WidgetDetails = styled.div`
+text-align: justify;
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 500;
   color: #ffffffb3;
 `;
 

@@ -28,6 +28,7 @@ const ArrowRight = styled(RiArrowDropRightLine)`
 `;
 
 const WidgetLink = styled(Link)`
+font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;

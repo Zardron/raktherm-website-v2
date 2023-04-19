@@ -5,7 +5,7 @@ const TopBar = () => {
   return (
     <Topbar>
       <TopBarContainer>
-        <SignUp>Sign up to Join My RAKtherm</SignUp>
+        <SignUp to={"/account"}>Sign up to Join My RAKtherm</SignUp>
       </TopBarContainer>
     </Topbar>
   );

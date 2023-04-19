@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const WidgetDetails = styled.div`
+text-align: justify;
+font-weight: 500;
   font-size: 14px;
   margin-bottom: 25px;
   color: #61728d;
