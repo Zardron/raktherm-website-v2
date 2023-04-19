@@ -151,6 +151,7 @@ export const WidgetContent = styled.div`
 `;
 
 export const WidgetLink = styled(Link)`
+font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;
@@ -177,12 +178,15 @@ export const WidgetLink = styled(Link)`
 `;
 
 export const WidgetDetails = styled.div`
+text-align: justify;
+font-weight: 500;
   font-size: 14px;
   margin-bottom: 25px;
   color: #61728d;
 `;
 
 export const Details = styled.div`
+font-weight: 500;
   width: 98%;
   display: flex;
   font-size: 14px;

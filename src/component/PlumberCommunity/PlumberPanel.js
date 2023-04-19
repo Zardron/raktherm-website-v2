@@ -79,7 +79,7 @@ const PlumberPanel = () => {
                   <PlumberSideMenu />
                 </LeftPanel>
 
-                <RightPanel>
+                <RightPanel  style={{paddingLeft: "30px"}}>
                   <PlumberWall />
                 </RightPanel>
               </Wrapper>
@@ -92,7 +92,7 @@ const PlumberPanel = () => {
                 <LeftPanel style={{paddingRight: "30px"}}>
                   <PlumberSideMenu />
                 </LeftPanel>
-                <RightPanel>
+                <RightPanel  style={{paddingLeft: "30px"}}>
                   <PlumberChatbox />
                 </RightPanel>
               </Wrapper>
@@ -105,7 +105,7 @@ const PlumberPanel = () => {
                 <LeftPanel style={{paddingRight: "30px"}}>
                   <PlumberSideMenu />
                 </LeftPanel>
-                <RightPanel>
+                <RightPanel  style={{paddingLeft: "30px"}}>
                   <PlumberChallenges />
                 </RightPanel>
               </Wrapper>
@@ -118,7 +118,7 @@ const PlumberPanel = () => {
                 <LeftPanel style={{paddingRight: "30px"}}>
                   <PlumberSideMenu />
                 </LeftPanel>
-                <RightPanel>
+                <RightPanel  style={{paddingLeft: "30px"}}>
                   <PlumberRewards />
                 </RightPanel>
               </Wrapper>

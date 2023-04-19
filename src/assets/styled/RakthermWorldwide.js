@@ -15,7 +15,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   padding-top: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   display: flex;
 `;
 
@@ -164,6 +164,7 @@ export const ProjectContent = styled.div`
 `;
 
 export const WidgetLink = styled(Link)`
+font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;

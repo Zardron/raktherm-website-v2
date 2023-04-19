@@ -3,12 +3,15 @@ import styled from "styled-components";
 import { ImCheckmark } from "react-icons/im";
 
 const WidgetDetails = styled.div`
+text-align: justify;
+font-weight: 500;
   font-size: 14px;
   margin-bottom: 25px;
   color: #61728d;
 `;
 
 const Details = styled.div`
+font-weight: 500;
   width: 98%;
   display: flex;
   font-size: 14px;
