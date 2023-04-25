@@ -23,8 +23,6 @@ import {
 import PlumberHome from "../component/PlumberCommunity/PlumberHome";
 
 const PlumberCommunity = () => {
-  const loggedIn = false;
-
   return (
     <>
       <TopBar />

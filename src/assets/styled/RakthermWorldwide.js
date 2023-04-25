@@ -81,7 +81,7 @@ export const HomeLink = styled(Link)`
   font-size: 14px;
 
   :hover {
-   color: #d4e3ee
+    color: #d4e3ee;
   }
 `;
 
@@ -164,7 +164,7 @@ export const ProjectContent = styled.div`
 `;
 
 export const WidgetLink = styled(Link)`
-font-weight: 500;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;
@@ -291,6 +291,12 @@ export const JoinBtn = styled(Link)`
   border: 2px solid #008053;
 
   :hover {
+    color: #008053;
+    background-color: white;
+    border: 2px solid #008053;
+  }
+
+  :focus {
     color: #008053;
     background-color: white;
     border: 2px solid #008053;

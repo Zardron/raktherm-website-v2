@@ -199,7 +199,7 @@ const PlumberHome = () => {
               <div class="item">
                 <div class="block-icon-2">
                   <div class="icon-cell">
-                    <a>
+                    <Link>
                       <div class="wrapper-icons">
                         <i
                           class="icons"
@@ -213,12 +213,12 @@ const PlumberHome = () => {
                           <TfiGallery class="img-icon" />
                         </i>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                   <div class="icon-cell">
                     <div class="wrapper-info">
                       <div class="title">
-                        <a class="link">COMMUNITY WALL</a>
+                        <Link class="link">COMMUNITY WALL</Link>
                       </div>
                     </div>
                   </div>
@@ -227,7 +227,7 @@ const PlumberHome = () => {
               <div class="item">
                 <div class="block-icon-2">
                   <div class="icon-cell">
-                    <a>
+                    <Link>
                       <div class="wrapper-icons">
                         <i
                           class="icons"
@@ -241,12 +241,12 @@ const PlumberHome = () => {
                           <HiOutlineChatBubbleLeftRight class="img-icon" />
                         </i>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                   <div class="icon-cell">
                     <div class="wrapper-info">
                       <div class="title">
-                        <a class="link">CHATBOX</a>
+                        <Link class="link">CHATBOX</Link>
                       </div>
                     </div>
                   </div>
@@ -255,7 +255,7 @@ const PlumberHome = () => {
               <div class="item">
                 <div class="block-icon-2">
                   <div class="icon-cell">
-                    <a>
+                    <Link>
                       <div class="wrapper-icons">
                         <i
                           class="icons"
@@ -269,12 +269,12 @@ const PlumberHome = () => {
                           <BsListTask class="img-icon" />
                         </i>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                   <div class="icon-cell">
                     <div class="wrapper-info">
                       <div class="title">
-                        <a class="link">CHALLENGES</a>
+                        <Link class="link">CHALLENGES</Link>
                       </div>
                     </div>
                   </div>
@@ -283,7 +283,7 @@ const PlumberHome = () => {
               <div class="item">
                 <div class="block-icon-2">
                   <div class="icon-cell">
-                    <a>
+                    <Link>
                       <div class="wrapper-icons">
                         <i
                           class="icons"
@@ -297,12 +297,12 @@ const PlumberHome = () => {
                           <BsGift class="img-icon" />
                         </i>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                   <div class="icon-cell">
                     <div class="wrapper-info">
                       <div class="title">
-                        <a class="link">REWARDS</a>
+                        <Link class="link">REWARDS</Link>
                       </div>
                     </div>
                   </div>

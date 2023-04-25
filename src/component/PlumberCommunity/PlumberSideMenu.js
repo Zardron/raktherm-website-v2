@@ -52,9 +52,9 @@ const PlumberSideMenu = () => {
               <div class="icon-cell">
                 <div class="wrapper-info">
                   <div class="title">
-                    <a class={`link ${title === "wall" ? "active-text" : ""}`}>
+                    <Link class={`link ${title === "wall" ? "active-text" : ""}`}>
                       COMMUNITY WALL
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -96,9 +96,9 @@ const PlumberSideMenu = () => {
               <div class="icon-cell">
                 <div class="wrapper-info">
                   <div class="title">
-                    <a class={`link ${title === "chatbox" ? "active-text" : ""}`}>
+                    <Link class={`link ${title === "chatbox" ? "active-text" : ""}`}>
                       CHATBOX
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -140,9 +140,9 @@ const PlumberSideMenu = () => {
               <div class="icon-cell">
                 <div class="wrapper-info">
                   <div class="title">
-                    <a class={`link ${title === "challenges" ? "active-text" : ""}`}>
+                    <Link class={`link ${title === "challenges" ? "active-text" : ""}`}>
                       CHALLENGES
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -183,9 +183,9 @@ const PlumberSideMenu = () => {
               <div class="icon-cell">
                 <div class="wrapper-info">
                   <div class="title">
-                    <a class={`link ${title === "rewards" ? "active-text" : ""}`}>
+                    <Link class={`link ${title === "rewards" ? "active-text" : ""}`}>
                       REWARDS
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

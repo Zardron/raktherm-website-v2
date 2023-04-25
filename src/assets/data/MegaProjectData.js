@@ -98,7 +98,7 @@ export const MEGA_PROJECT = [
     {
         id: "17",
         title: "EXCLUSIVE BAY DAMAC - DUBAI",
-        src: "https://www.raktherm.com/upload/spic/spic_17dubai%20festive1.jpg",
+        src: "https://www.raktherm.com/upload/spic/spic_18executive1.jpg",
         link: ""
     },
     {
