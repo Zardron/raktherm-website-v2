@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
 import PlumberCommunity from "./pages/PlumberCommunity";
 import PlumberPanel from "./component/PlumberCommunity/PlumberPanel";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/blog-detail/:title" element={<BlogDetails />} />
         <Route path="/plumber-community" element={<PlumberCommunity />} />
         <Route path="/plumber-community/:title" element={<PlumberPanel />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

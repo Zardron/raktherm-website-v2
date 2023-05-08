@@ -1,4 +1,3 @@
-
 export const QUICK_LINK = [
   {
     id: "1",
@@ -184,4 +183,35 @@ export const RAKTHERM_WORLDWIDE_CONTACT = [
   },
 ];
 
-
+export const DASHBOARD_LINKS = [
+  {
+    id: "1",
+    title: "My RAKtherm",
+    link: "a-glance",
+  },
+  {
+    id: "2",
+    title: "My Success Stories",
+    link: "corporate-strategy",
+  },
+  {
+    id: "3",
+    title: "My Special Moments",
+    link: "My Trainings",
+  },
+  {
+    id: "4",
+    title: "Plumber Community",
+    link: "sustained-development",
+  },
+  {
+    id: "5",
+    title: "Catalogues & Downloads",
+    link: "sustained-development",
+  },
+  {
+    id: "6",
+    title: "Update Profile",
+    link: "sustained-development",
+  },
+];
