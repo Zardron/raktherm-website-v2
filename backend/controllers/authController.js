@@ -21,7 +21,15 @@ const login = asyncHandler(async (req, res) => {
   const accessToken = jwt.sign(
     {
       UserInfo: {
+        picture: foundUser.picture,
         email: foundUser.email,
+        firstname: foundUser.firstname,
+        lastname: foundUser.lastname,
+        position: foundUser.position,
+        companyName: foundUser.companyName,
+        country: foundUser.country,
+        phoneNumber: foundUser.phoneNumber,
+        active: foundUser.active,
       },
     },
     process.env.ACCESS_TOKEN_SECRET,
@@ -29,7 +37,17 @@ const login = asyncHandler(async (req, res) => {
   );
 
   const refreshToken = jwt.sign(
-    { email: foundUser.email },
+    {
+      picture: foundUser.picture,
+      email: foundUser.email,
+      firstname: foundUser.firstname,
+      lastname: foundUser.lastname,
+      position: foundUser.position,
+      companyName: foundUser.companyName,
+      country: foundUser.country,
+      phoneNumber: foundUser.phoneNumber,
+      active: foundUser.active,
+    },
     process.env.REFRESH_TOKEN_SECRET,
     { expiresIn: "7d" }
   );
@@ -63,7 +81,15 @@ const refresh = (req, res) => {
       if (err) return res.status(403).json({ message: "Forbidden" });
 
       const foundUser = await User.findOne({
+        picture: decoded.picture,
         email: decoded.email,
+        firstname: decoded.firstname,
+        lastname: decoded.lastname,
+        position: decoded.position,
+        companyName: decoded.companyName,
+        country: decoded.country,
+        phoneNumber: decoded.phoneNumber,
+        active: decoded.active,
       }).exec();
 
       if (!foundUser) return res.status(401).json({ message: "Unauthorized" });
@@ -71,7 +97,15 @@ const refresh = (req, res) => {
       const accessToken = jwt.sign(
         {
           UserInfo: {
+            picture: foundUser.picture,
             email: foundUser.email,
+            firstname: foundUser.firstname,
+            lastname: foundUser.lastname,
+            position: foundUser.position,
+            companyName: foundUser.companyName,
+            country: foundUser.country,
+            phoneNumber: foundUser.phoneNumber,
+            active: foundUser.active,
           },
         },
         process.env.ACCESS_TOKEN_SECRET,
