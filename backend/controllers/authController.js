@@ -15,8 +15,11 @@ const login = asyncHandler(async (req, res) => {
 
   const foundUser = await User.findOne({ email }).exec();
 
-  if (!foundUser || foundUser.password !== password)
-    return res.status(401).json({ message: "Invalid email or password!" });
+  if (email !== foundUser.email)
+    return res.status(401).json({ message: "Invalid email!" });
+
+  if (password !== foundUser.password)
+    return res.status(401).json({ message: "Invalid password!" });
 
   const accessToken = jwt.sign(
     {
