@@ -9,12 +9,11 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SubFooter from "../component/SubFooter";
 import { DASHBOARD_LINKS } from "../assets/data/WidgetData";
-import QuickLink from "../component/QuickLink";
 import Profile from "../component/Dashboard/Profile";
 
 const Dashboard = () => {
   const { title } = useParams();
-  console.log(title);
+
   return (
     <>
       <TopBar />

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import {
   Container,
@@ -31,12 +31,52 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { COUNTRIES } from "../assets/data/Countries";
 import { useAddNewUserMutation } from "../redux/slice/api/usersApiSlice";
 import { useNavigate } from "react-router-dom";
+import usePersist from "../redux/hooks/usePersist";
+import { useLoginMutation } from "../redux/slice/api/authApiSlice";
+import { setCredentials } from "../redux/slice/authSlice";
+import { useDispatch } from "react-redux";
 
 const Account = () => {
-  const [addNewUser, { isLoading, isSuccess, isError, error }] =
-    useAddNewUserMutation();
+  // LOGIN
+  const errRef = useRef();
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  usePersist(true);
+
+  const [login, { isLoading }] = useLoginMutation();
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleSubmitLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const { accessToken } = await login({
+        loginEmail,
+        loginPassword,
+      }).unwrap();
+      dispatch(setCredentials({ accessToken }));
+      localStorage.setItem("token", accessToken);
+      setLoginEmail("");
+      setLoginPassword("");
+      navigate("/dashboard");
+    } catch (err) {
+      if (!err.status) {
+        setErrMsg("No Server Response");
+      } else if (err.status === 400) {
+        setErrMsg(err.data?.message);
+      } else if (err.status === 401) {
+        setErrMsg(err.data?.message);
+      } else {
+        setErrMsg(err.data?.message);
+      }
+      errRef.current.focus();
+    }
+  };
+
+  // REGISTER
+  const [addNewUser, { isSuccess, isError, error }] = useAddNewUserMutation();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,8 +86,6 @@ const Account = () => {
   const [companyName, setCompanyName] = useState("");
   const [country, setCountry] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-
-  console.log(country);
 
   useEffect(() => {
     if (isSuccess) {
@@ -126,10 +164,26 @@ const Account = () => {
                 <div class="blog-detail-wrapper">
                   <div class="comment-respond">
                     <h3 class="title">Login</h3>
+                    <p
+                      ref={errRef}
+                      style={{ color: "red", paddingBottom: "15px" }}
+                      aria-live="assertive"
+                    >
+                      {errMsg}
+                    </p>
                     <div class="contact-form-2"></div>
-                    <form>
-                      <InputField placeholder="Email" />
-                      <InputField placeholder="Password" />
+                    <form onSubmit={handleSubmitLogin}>
+                      <InputField
+                        placeholder="Email"
+                        value={loginEmail}
+                        onChange={(e) => setLoginEmail(e.target.value)}
+                      />
+                      <InputField
+                        type="password"
+                        placeholder="Password"
+                        value={loginPassword}
+                        onChange={(e) => setLoginPassword(e.target.value)}
+                      />
 
                       <Button
                         style={{
