@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredentials } from "./authSlice";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://raktherm-website-v2-backend.onrender.com",
+  baseUrl: "http://localhost:5000",
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const token = getState().auth.token;

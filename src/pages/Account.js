@@ -35,6 +35,7 @@ import usePersist from "../redux/hooks/usePersist";
 import { useLoginMutation } from "../redux/slice/api/authApiSlice";
 import { setCredentials } from "../redux/slice/authSlice";
 import { useDispatch } from "react-redux";
+import CryptoJS from "crypto-js";
 
 const Account = () => {
   // LOGIN
@@ -111,6 +112,22 @@ const Account = () => {
     }
     return result;
   });
+
+  const [hashRoute] = useState(() => {
+    let result = "";
+    const length = 25;
+
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+  });
+
   const [errMsgs, setErrMsgs] = useState("");
 
   const regRef = useRef();
@@ -135,6 +152,9 @@ const Account = () => {
     captchaCode,
   ]);
 
+  var hashEmail = CryptoJS.AES.encrypt(email, "RAKTHERM@2023").toString();
+  localStorage.setItem("email-token", hashEmail);
+
   useEffect(() => {
     if (isSuccess) {
       setEmail("");
@@ -146,7 +166,7 @@ const Account = () => {
       setCompanyName("");
       setCountry("");
       setPhoneNumber("");
-      navigate("/verify-email");
+      navigate(`/account-verification/${hashRoute}`);
     }
   }, [isSuccess, navigate]);
 

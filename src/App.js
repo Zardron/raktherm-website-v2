@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Outlet,
+  useParams,
 } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
 import Solutions from "./pages/Solutions";
@@ -18,7 +19,7 @@ import BlogDetails from "./pages/BlogDetails";
 import PlumberCommunity from "./pages/PlumberCommunity";
 import PlumberPanel from "./component/PlumberCommunity/PlumberPanel";
 import Dashboard from "./pages/Dashboard";
-import PersistLogin from "./PersistLogin";
+import AccountVerification from "./pages/AccountVerification";
 
 function App() {
   return (
@@ -43,6 +44,10 @@ function App() {
         <Route path="/plumber-community" element={<PlumberCommunity />} />
         <Route path="/plumber-community/:title" element={<PlumberPanel />} />
         <Route path="/dashboard/:title" element={<Dashboard />} />
+        <Route
+          path={`/account-verification/:email`}
+          element={<AccountVerification />}
+        />
       </Routes>
     </Router>
   );
