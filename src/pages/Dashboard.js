@@ -12,25 +12,14 @@ import { DASHBOARD_LINKS } from "../assets/data/WidgetData";
 import useAuth from "../redux/hooks/useAuth";
 import Home from "../component/Dashboard/Home";
 import UpdateProfile from "../component/Dashboard/UpdateProfile";
-import { InputField } from "../assets/styled/AccountStyle";
 
 const Dashboard = () => {
   const { title } = useParams();
   const data = useAuth();
 
-  const {
-    active,
-    companyName,
-    country,
-    email,
-    firstname,
-    lastname,
-    phoneNumber,
-    picture,
-    position,
-  } = data;
+  const { picture } = data;
 
-  console.log(title);
+  console.log(data);
 
   return (
     <>
