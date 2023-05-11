@@ -27,7 +27,7 @@ export const QUICK_LINK = [
   {
     id: "6",
     title: "Join RAKtherm Plumber Community",
-    link: "/join-raktherm-plumber-community",
+    link: "/plumber-community",
   },
 ];
 
@@ -190,32 +190,37 @@ export const DASHBOARD_LINKS = [
     link: "/dashboard/home",
   },
   {
-    id: "1",
+    id: "2",
     title: "My RAKtherm",
     link: "/raktherm-worldwide/join-my-raktherm",
   },
   {
-    id: "2",
+    id: "3",
     title: "My Success Stories",
     link: "/dashboard/success-stories",
   },
   {
-    id: "3",
+    id: "4",
     title: "My Special Moments",
     link: "/dashboard/special-moments",
   },
   {
-    id: "4",
+    id: "5",
     title: "My Trainings",
     link: "/dashboard/trainings",
   },
   {
     id: "6",
+    title: "Plumber Community",
+    link: "/plumber-community/menu",
+  },
+  {
+    id: "7",
     title: "Catalogues & Downloads",
     link: "/services-and-support/catalogues-and-downloads",
   },
   {
-    id: "7",
+    id: "8",
     title: "Update Profile",
     link: "/dashboard/update-profile",
   },

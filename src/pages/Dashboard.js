@@ -19,8 +19,6 @@ const Dashboard = () => {
 
   const { picture } = data;
 
-  console.log(data);
-
   return (
     <>
       <TopBar />

@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { ImFilePdf } from "react-icons/im";
 import { CATALOGUES } from "../../assets/data/CatalogueData";
 import { Link } from "react-router-dom";
+import useAuth from "../../redux/hooks/useAuth";
 
 const WidgetDetails = styled.div`
-text-align: justify;
-font-weight: 500;
+  text-align: justify;
+  font-weight: 500;
   font-size: 14px;
   margin-bottom: 25px;
   color: #61728d;
@@ -68,7 +69,7 @@ const PDFButton = styled(Link)`
 `;
 
 const CataloguesAndDownloads = () => {
-  const loggedIn = false;
+  const { active } = useAuth();
 
   return (
     <>
@@ -78,17 +79,27 @@ const CataloguesAndDownloads = () => {
         reliable reference that contains relevant information and specifications
         including suitable applications.
       </WidgetDetails>
-
       <SubTitle>
         <strong>Kindly register to download the catalogues</strong>
       </SubTitle>
 
-      {CATALOGUES.map((data) => (
-        <PDFButton to={loggedIn ? "/profile" : "/account"}>
-          <PDF />
-          {data.name}
-        </PDFButton>
-      ))}
+      {CATALOGUES.map((data) =>
+        active ? (
+          <a
+            className="download-link"
+            href={`https://v2.raktherm.com/pdf/${data.link}`}
+            download
+          >
+            <PDF />
+            {data.name}
+          </a>
+        ) : (
+          <PDFButton to={active ? "/profile" : "/account"}>
+            <PDF />
+            {data.name}
+          </PDFButton>
+        )
+      )}
     </>
   );
 };

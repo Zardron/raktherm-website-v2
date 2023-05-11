@@ -6,7 +6,6 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   background-color: white;
-  height: 130px;
   z-index: 5;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;

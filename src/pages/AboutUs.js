@@ -82,7 +82,7 @@ const HomeLink = styled(Link)`
   font-size: 14px;
 
   :hover {
-   color: #d4e3ee
+    color: #d4e3ee;
   }
 `;
 
@@ -161,7 +161,7 @@ const WidgetContent = styled.div`
 `;
 
 const WidgetLink = styled(Link)`
-font-weight: 500;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;
@@ -189,7 +189,6 @@ font-weight: 500;
 
 const AboutUs = () => {
   const { title } = useParams();
-  console.log(title);
   return (
     <>
       <TopBar />

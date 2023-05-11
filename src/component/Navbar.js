@@ -45,7 +45,7 @@ const Navbar = () => {
   }, [offset]);
 
   return (
-    <Header className={isUpper ? "" : "sticky"}>
+    <Header className={"sticky"}>
       <Container>
         <LogoContainer>
           <Link to="/">

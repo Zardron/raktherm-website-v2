@@ -10,85 +10,11 @@ import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 import { BsGift, BsListTask } from "react-icons/bs";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { Link } from "react-router-dom";
-
-const TitleWrapper = styled.div`
-  display: flex;
-`;
-
-const ItalicText = styled.span`
-  font-size: 16px;
-  font-weight: 400;
-  font-style: italic;
-  margin: 0;
-  text-transform: capitalize;
-  color: #aab7ca;
-`;
-
-const LineTitle = styled.span`
-  text-align: left;
-  position: relative;
-  color: #008053;
-  font-size: 27px;
-  font-weight: 900;
-`;
-
-const Title = styled.p`
-  text-align: left;
-  position: relative;
-  color: #3a4d6a;
-  font-size: 30px;
-  font-weight: 700;
-  padding: 0px 0px 0px 10px;
-`;
-
-const Div = styled.div`
-  padding-top: 50px;
-`;
-
-const Container = styled.div`
-  padding-bottom: 25px;
-  display: flex;
-  justify-content: flex-start;
-`;
-
-const Panel = styled.div`
-  flex: 1;
-  text-align: justify;
-  padding: 10px;
-`;
-
-const WrapperDetails = styled.div`
-  display: flex;
-  padding-bottom: 5px;
-`;
-
-const Text = styled.div`
-  font-weight: 500;
-  font-size: 14px;
-  color: #61728d;
-`;
-
-const Img = styled.img`
-  padding-left: 30px;
-  padding-right: 10px;
-`;
-
-const LinkText = styled(Link)`
-  color: black;
-  font-weight: 700;
-`;
-
-const TITLE = styled.h1`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 46px;
-  color: black;
-  font-weight: 600;
-  margin: 25px 0;
-`;
+import useAuth from "../../redux/hooks/useAuth";
 
 const PlumberHome = () => {
+  const { active } = useAuth();
+
   return (
     <>
       <Div>
@@ -148,7 +74,8 @@ const PlumberHome = () => {
             <Img src="https://www.altudo.co/dist/altudo/static/media/triangle-icon.6c3d112140de5308298e.svg" />
             <Text>
               You can select whatever you want from the{" "}
-              <LinkText to={"/plumber-community/menu"}>MENU</LinkText> you want to visit.
+              <LinkText to={"/plumber-community/menu"}>MENU</LinkText> you want
+              to visit.
             </Text>
           </WrapperDetails>
 
@@ -189,7 +116,11 @@ const PlumberHome = () => {
           <JoinBtn style={{ marginRight: "5px" }}>
             PLUMBER COMMUNITY USER GUIDE
           </JoinBtn>
-          <JoinBtn>JOIN NOW</JoinBtn>
+          {active ? (
+            <JoinBtn to={"/dashboard/home"}>JOIN NOW</JoinBtn>
+          ) : (
+            <JoinBtn to={"/account"}>JOIN NOW</JoinBtn>
+          )}
         </WrapperDetails>
 
         <TITLE>WHAT WE OFFER?</TITLE>
@@ -421,5 +352,82 @@ const PlumberHome = () => {
     </>
   );
 };
+
+const TitleWrapper = styled.div`
+  display: flex;
+`;
+
+const ItalicText = styled.span`
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0;
+  text-transform: capitalize;
+  color: #aab7ca;
+`;
+
+const LineTitle = styled.span`
+  text-align: left;
+  position: relative;
+  color: #008053;
+  font-size: 27px;
+  font-weight: 900;
+`;
+
+const Title = styled.p`
+  text-align: left;
+  position: relative;
+  color: #3a4d6a;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0px 0px 0px 10px;
+`;
+
+const Div = styled.div`
+  padding-top: 50px;
+`;
+
+const Container = styled.div`
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: flex-start;
+`;
+
+const Panel = styled.div`
+  flex: 1;
+  text-align: justify;
+  padding: 10px;
+`;
+
+const WrapperDetails = styled.div`
+  display: flex;
+  padding-bottom: 5px;
+`;
+
+const Text = styled.div`
+  font-weight: 500;
+  font-size: 14px;
+  color: #61728d;
+`;
+
+const Img = styled.img`
+  padding-left: 30px;
+  padding-right: 10px;
+`;
+
+const LinkText = styled(Link)`
+  color: black;
+  font-weight: 700;
+`;
+
+const TITLE = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46px;
+  color: black;
+  font-weight: 600;
+  margin: 25px 0;
+`;
 
 export default PlumberHome;
