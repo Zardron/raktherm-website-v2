@@ -5,13 +5,41 @@ const useAuth = () => {
 
   if (token) {
     const decoded = jwtDecode(token);
-    const { firstname } = decoded.UserInfo;
+    const {
+      active,
+      companyName,
+      country,
+      email,
+      firstname,
+      lastname,
+      phoneNumber,
+      picture,
+      position,
+    } = decoded.UserInfo;
 
-    console.log("decoded", decoded.UserInfo);
-
-    return { firstname };
+    return {
+      active,
+      companyName,
+      country,
+      email,
+      firstname,
+      lastname,
+      phoneNumber,
+      picture,
+      position,
+    };
   }
 
-  return { firstname: "" };
+  return {
+    active: false,
+    companyName: "",
+    country: "",
+    email: "",
+    firstname: "",
+    lastname: "",
+    phoneNumber: "",
+    picture: "",
+    position: "",
+  };
 };
 export default useAuth;

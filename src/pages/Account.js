@@ -38,11 +38,20 @@ import { useDispatch } from "react-redux";
 
 const Account = () => {
   // LOGIN
+  const logRef = useRef();
   const errRef = useRef();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
   usePersist(true);
+
+  useEffect(() => {
+    logRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setErrMsg("");
+  }, [loginEmail, loginPassword]);
 
   const [login, { isLoading }] = useLoginMutation();
 
@@ -60,7 +69,7 @@ const Account = () => {
       localStorage.setItem("token", accessToken);
       setLoginEmail("");
       setLoginPassword("");
-      navigate("/dashboard");
+      navigate("/dashboard/home");
     } catch (err) {
       if (!err.status) {
         setErrMsg("No Server Response");
@@ -80,40 +89,115 @@ const Account = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [position, setPosition] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [country, setCountry] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [captchaCode, setCaptchaCode] = useState("");
+  const [captcha, setCaptcha] = useState(() => {
+    let result = "";
+    const length = 6;
+
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+  });
+  const [errMsgs, setErrMsgs] = useState("");
+
+  const regRef = useRef();
+  const errRefs = useRef();
+
+  useEffect(() => {
+    regRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setErrMsgs("");
+  }, [
+    email,
+    password,
+    confirmPassword,
+    firstname,
+    lastname,
+    position,
+    companyName,
+    country,
+    phoneNumber,
+    captchaCode,
+  ]);
 
   useEffect(() => {
     if (isSuccess) {
       setEmail("");
       setPassword("");
+      setConfirmPassword("");
       setFirstname("");
       setLastname("");
       setPosition("");
       setCompanyName("");
       setCountry("");
       setPhoneNumber("");
-      navigate("/dashboard");
+      navigate("/verify-email");
     }
   }, [isSuccess, navigate]);
+
+  const handleCaptcha = () => {
+    let result = "";
+    const length = 6;
+
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    setCaptcha(result);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await addNewUser({
-      email,
-      password,
-      firstname,
-      lastname,
-      position,
-      companyName,
-      country,
-      phoneNumber,
-    });
+    if (
+      !email ||
+      !password ||
+      !confirmPassword ||
+      !firstname ||
+      !lastname ||
+      !position ||
+      !companyName ||
+      !country ||
+      !phoneNumber
+    ) {
+      setErrMsgs("All fields are required!");
+    } else {
+      if (password !== confirmPassword) {
+        setErrMsgs("Password does not match!");
+      } else if (captcha !== captchaCode) {
+        setErrMsgs("Invalid captcha code!");
+      } else {
+        await addNewUser({
+          email,
+          password,
+          firstname,
+          lastname,
+          position,
+          companyName,
+          country,
+          phoneNumber,
+        });
+      }
+    }
   };
 
   return (
@@ -175,6 +259,7 @@ const Account = () => {
                     <form onSubmit={handleSubmitLogin}>
                       <InputField
                         placeholder="Email"
+                        ref={logRef}
                         value={loginEmail}
                         onChange={(e) => setLoginEmail(e.target.value)}
                       />
@@ -204,8 +289,11 @@ const Account = () => {
                 <div class="blog-detail-wrapper">
                   <div class="comment-respond">
                     <h3 class="title">Register</h3>
-                    <p style={{ color: "red", paddingBottom: "15px" }}>
-                      {error?.data?.message}
+                    <p
+                      ref={errRefs}
+                      style={{ color: "red", paddingBottom: "15px" }}
+                    >
+                      {error?.data?.message} {errMsgs}
                     </p>
                     <div class="contact-form-2"></div>
                     <form onSubmit={handleSubmit}>
@@ -213,6 +301,7 @@ const Account = () => {
                         placeholder="Email*"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        ref={regRef}
                       />
                       <InputField
                         placeholder="Password*"
@@ -223,8 +312,8 @@ const Account = () => {
                       <InputField
                         placeholder="Confirm Password*"
                         type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                       />
                       <InputField
                         placeholder="First Name*"
@@ -249,6 +338,7 @@ const Account = () => {
                       <Select
                         placeholder="Select Country*"
                         onChange={(e) => setCountry(e.target.value)}
+                        value={country}
                       >
                         {COUNTRIES.map((data) => (
                           <>
@@ -262,12 +352,18 @@ const Account = () => {
                         onChange={(e) => setPhoneNumber(e.target.value)}
                       />
                       <CaptchaContainer>
-                        <Captcha style={{ width: "20%" }}>44A7xb</Captcha>
-                        <RefreshButton>
+                        <Captcha style={{ width: "20%" }} on>
+                          {captcha}
+                        </Captcha>
+                        <RefreshButton onClick={handleCaptcha}>
                           <RefreshIcon />
                         </RefreshButton>
                       </CaptchaContainer>
-                      <InputField placeholder="Enter Captcha Here" />
+                      <InputField
+                        placeholder="Enter Captcha Here"
+                        value={captchaCode}
+                        onChange={(e) => setCaptchaCode(e.target.value)}
+                      />
                       <Button style={{ width: "20%", marginBottom: "20px" }}>
                         Register
                       </Button>

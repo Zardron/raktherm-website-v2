@@ -164,7 +164,7 @@ export const ProjectContent = styled.div`
 `;
 
 export const WidgetLink = styled(Link)`
-font-weight: 500;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;
@@ -191,7 +191,7 @@ font-weight: 500;
 `;
 
 export const WidgetDetails = styled.div`
-text-align: justify;
+  text-align: justify;
   font-weight: 500;
   font-size: 14px;
   margin-bottom: 25px;
@@ -345,6 +345,10 @@ export const InputField = styled.input`
     border-bottom: 1px solid #008053a1;
     transition: all 0.1s ease;
   }
+
+  :disabled {
+    background-color: #d8d8d8;
+  }
 `;
 
 export const Select = styled.select`
@@ -417,7 +421,7 @@ export const Captcha = styled.div`
   font-family: "Montserrat", sans-serif;
   line-height: 40px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   width: 10%;
   margin-bottom: 5px;
   padding: 0 11px 0px 15px;

@@ -9,10 +9,28 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SubFooter from "../component/SubFooter";
 import { DASHBOARD_LINKS } from "../assets/data/WidgetData";
-import Profile from "../component/Dashboard/Profile";
+import useAuth from "../redux/hooks/useAuth";
+import Home from "../component/Dashboard/Home";
+import UpdateProfile from "../component/Dashboard/UpdateProfile";
+import { InputField } from "../assets/styled/AccountStyle";
 
 const Dashboard = () => {
   const { title } = useParams();
+  const data = useAuth();
+
+  const {
+    active,
+    companyName,
+    country,
+    email,
+    firstname,
+    lastname,
+    phoneNumber,
+    picture,
+    position,
+  } = data;
+
+  console.log(title);
 
   return (
     <>
@@ -25,7 +43,7 @@ const Dashboard = () => {
               <AboutUsDetails>
                 <BannerTitleWrapper>
                   <BannerTitle>
-                    <BannerTitleLine>|</BannerTitleLine>ABOUT US
+                    <BannerTitleLine>|</BannerTitleLine>DASHBOARD
                   </BannerTitle>
                 </BannerTitleWrapper>
               </AboutUsDetails>
@@ -39,7 +57,7 @@ const Dashboard = () => {
               <Arrow>
                 <MdOutlineKeyboardArrowRight />
               </Arrow>{" "}
-              <ActiveLink>About us</ActiveLink>
+              <ActiveLink>Dashboard</ActiveLink>
             </HomeLink>
           </Content>
         </Container>
@@ -49,19 +67,44 @@ const Dashboard = () => {
             <Wrapper>
               <LeftPanel>
                 <WidgetTitle>PROFILE</WidgetTitle>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: "1px solid #00805378",
+                    padding: "10px 0px",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <img src={picture} style={{ width: "220px" }} />
+                </div>
+
+                {title === "update-profile" && (
+                  <>
+                    <Label>Update Profile Picture</Label>
+                    <ChangeProfile
+                      style={{ marginBottom: "25px", paddingBottom: "10px" }}
+                      type="file"
+                    />
+                  </>
+                )}
+
                 {DASHBOARD_LINKS.map((item, index) => (
                   <>
-                    <WidgetLink to={`/about-us/${item.link}`} key={index}>
+                    <WidgetLink to={`${item.link}`} key={index}>
                       {item.title}
                       <ArrowRight />
                     </WidgetLink>
                   </>
                 ))}
-
                 {/* <QuickLink /> */}
               </LeftPanel>
 
-              <RightPanel>{title === "profile" && <Profile />}</RightPanel>
+              <RightPanel>
+                {title === "home" && <Home />}{" "}
+                {title === "update-profile" && <UpdateProfile />}
+              </RightPanel>
             </Wrapper>
           </Container>
         </WidgetContent>
@@ -85,13 +128,13 @@ const Wrapper = styled.div`
 `;
 
 const LeftPanel = styled.div`
-  width: 25%;
+  width: 20%;
   padding-right: 10px;
 `;
 
 const RightPanel = styled.div`
   padding-left: 10px;
-  width: 75%;
+  width: 80%;
 `;
 
 const BannerPage = styled.div`
@@ -242,6 +285,48 @@ const WidgetLink = styled(Link)`
       opacity: 1 !important;
     }
   }
+`;
+
+export const ChangeProfile = styled.input`
+  font-family: "Montserrat", sans-serif;
+  line-height: 40px;
+  font-weight: 400;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 10px;
+  resize: none;
+  color: #61728d;
+  border: none;
+  border: 1px solid #d8d8d8;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 3px;
+
+  background-color: transparent;
+  box-shadow: none !important;
+  transition: all 0.1s ease;
+
+  ::file-selector-button {
+    color: white;
+    background-color: #008053;
+    padding: 0.5em;
+    border: 2px solid #008053;
+    border-radius: 3px;
+
+    :hover {
+      color: #008053;
+      background-color: white;
+      border: 2px solid #008053;
+    }
+  }
+`;
+
+const Label = styled.div`
+  text-align: justify;
+  font-weight: 500;
+  font-size: 14px;
+  color: #61728d;
 `;
 
 export default Dashboard;

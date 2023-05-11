@@ -42,7 +42,7 @@ function App() {
         <Route path="/blog-detail/:title" element={<BlogDetails />} />
         <Route path="/plumber-community" element={<PlumberCommunity />} />
         <Route path="/plumber-community/:title" element={<PlumberPanel />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/:title" element={<Dashboard />} />
       </Routes>
     </Router>
   );
