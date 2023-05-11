@@ -1,4 +1,3 @@
-
 export const QUICK_LINK = [
   {
     id: "1",
@@ -184,4 +183,40 @@ export const RAKTHERM_WORLDWIDE_CONTACT = [
   },
 ];
 
-
+export const DASHBOARD_LINKS = [
+  {
+    id: "1",
+    title: "Dashboard",
+    link: "/dashboard/home",
+  },
+  {
+    id: "1",
+    title: "My RAKtherm",
+    link: "/raktherm-worldwide/join-my-raktherm",
+  },
+  {
+    id: "2",
+    title: "My Success Stories",
+    link: "/dashboard/success-stories",
+  },
+  {
+    id: "3",
+    title: "My Special Moments",
+    link: "/dashboard/special-moments",
+  },
+  {
+    id: "4",
+    title: "My Trainings",
+    link: "/dashboard/trainings",
+  },
+  {
+    id: "6",
+    title: "Catalogues & Downloads",
+    link: "/services-and-support/catalogues-and-downloads",
+  },
+  {
+    id: "7",
+    title: "Update Profile",
+    link: "/dashboard/update-profile",
+  },
+];

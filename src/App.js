@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
 import Solutions from "./pages/Solutions";
 import Home from "./pages/Home";
@@ -12,12 +17,14 @@ import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
 import PlumberCommunity from "./pages/PlumberCommunity";
 import PlumberPanel from "./component/PlumberCommunity/PlumberPanel";
+import Dashboard from "./pages/Dashboard";
+import PersistLogin from "./PersistLogin";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<Home />} />
         <Route path="/about-us/:title" element={<AboutUs />} />
         <Route path="/solutions/:title" element={<Solutions />} />
         <Route
@@ -35,6 +42,7 @@ function App() {
         <Route path="/blog-detail/:title" element={<BlogDetails />} />
         <Route path="/plumber-community" element={<PlumberCommunity />} />
         <Route path="/plumber-community/:title" element={<PlumberPanel />} />
+        <Route path="/dashboard/:title" element={<Dashboard />} />
       </Routes>
     </Router>
   );

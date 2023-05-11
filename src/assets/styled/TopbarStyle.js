@@ -6,6 +6,9 @@ export const TopBarContainer = styled.div`
   padding: 5px 10px;
   margin-right: auto;
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
 export const Topbar = styled.div`

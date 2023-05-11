@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import {
   Container,
@@ -29,51 +29,177 @@ import SubFooter from "../component/SubFooter";
 import Footer from "../component/Footer";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { COUNTRIES } from "../assets/data/Countries";
-
-const TitleWrapper = styled.div`
-  display: flex;
-  padding-top: 25px;
-`;
-
-const ItalicText = styled.span`
-  font-size: 16px;
-  font-weight: 400;
-  font-style: italic;
-  margin: 0;
-  text-transform: capitalize;
-  color: #aab7ca;
-`;
-
-const LineTitle = styled.span`
-  text-align: left;
-  position: relative;
-  color: #008053;
-  font-size: 27px;
-  font-weight: 900;
-`;
-
-const Title = styled.p`
-  text-align: left;
-  position: relative;
-  color: #3a4d6a;
-  font-size: 30px;
-  font-weight: 700;
-  padding: 0px 0px 0px 10px;
-`;
-
-const Div = styled.div``;
-
-const AccountWrapper = styled.div`
-  display: flex;
-  margin: 50px 0px;
-`;
-
-const Panel = styled.div`
-  flex: 1;
-  padding: 20px;
-`;
+import { useAddNewUserMutation } from "../redux/slice/api/usersApiSlice";
+import { useNavigate } from "react-router-dom";
+import usePersist from "../redux/hooks/usePersist";
+import { useLoginMutation } from "../redux/slice/api/authApiSlice";
+import { setCredentials } from "../redux/slice/authSlice";
+import { useDispatch } from "react-redux";
 
 const Account = () => {
+  // LOGIN
+  const logRef = useRef();
+  const errRef = useRef();
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  usePersist(true);
+
+  useEffect(() => {
+    logRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setErrMsg("");
+  }, [loginEmail, loginPassword]);
+
+  const [login, { isLoading }] = useLoginMutation();
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleSubmitLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const { accessToken } = await login({
+        loginEmail,
+        loginPassword,
+      }).unwrap();
+      dispatch(setCredentials({ accessToken }));
+      localStorage.setItem("token", accessToken);
+      setLoginEmail("");
+      setLoginPassword("");
+      navigate("/dashboard/home");
+    } catch (err) {
+      if (!err.status) {
+        setErrMsg("No Server Response");
+      } else if (err.status === 400) {
+        setErrMsg(err.data?.message);
+      } else if (err.status === 401) {
+        setErrMsg(err.data?.message);
+      } else {
+        setErrMsg(err.data?.message);
+      }
+      errRef.current.focus();
+    }
+  };
+
+  // REGISTER
+  const [addNewUser, { isSuccess, isError, error }] = useAddNewUserMutation();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [position, setPosition] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [country, setCountry] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [captchaCode, setCaptchaCode] = useState("");
+  const [captcha, setCaptcha] = useState(() => {
+    let result = "";
+    const length = 6;
+
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+  });
+  const [errMsgs, setErrMsgs] = useState("");
+
+  const regRef = useRef();
+  const errRefs = useRef();
+
+  useEffect(() => {
+    regRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    setErrMsgs("");
+  }, [
+    email,
+    password,
+    confirmPassword,
+    firstname,
+    lastname,
+    position,
+    companyName,
+    country,
+    phoneNumber,
+    captchaCode,
+  ]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setFirstname("");
+      setLastname("");
+      setPosition("");
+      setCompanyName("");
+      setCountry("");
+      setPhoneNumber("");
+      navigate("/verify-email");
+    }
+  }, [isSuccess, navigate]);
+
+  const handleCaptcha = () => {
+    let result = "";
+    const length = 6;
+
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    setCaptcha(result);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (
+      !email ||
+      !password ||
+      !confirmPassword ||
+      !firstname ||
+      !lastname ||
+      !position ||
+      !companyName ||
+      !country ||
+      !phoneNumber
+    ) {
+      setErrMsgs("All fields are required!");
+    } else {
+      if (password !== confirmPassword) {
+        setErrMsgs("Password does not match!");
+      } else if (captcha !== captchaCode) {
+        setErrMsgs("Invalid captcha code!");
+      } else {
+        await addNewUser({
+          email,
+          password,
+          firstname,
+          lastname,
+          position,
+          companyName,
+          country,
+          phoneNumber,
+        });
+      }
+    }
+  };
+
   return (
     <>
       <TopBar />
@@ -122,10 +248,27 @@ const Account = () => {
                 <div class="blog-detail-wrapper">
                   <div class="comment-respond">
                     <h3 class="title">Login</h3>
+                    <p
+                      ref={errRef}
+                      style={{ color: "red", paddingBottom: "15px" }}
+                      aria-live="assertive"
+                    >
+                      {errMsg}
+                    </p>
                     <div class="contact-form-2"></div>
-                    <form>
-                      <InputField placeholder="Email" />
-                      <InputField placeholder="Password" />
+                    <form onSubmit={handleSubmitLogin}>
+                      <InputField
+                        placeholder="Email"
+                        ref={logRef}
+                        value={loginEmail}
+                        onChange={(e) => setLoginEmail(e.target.value)}
+                      />
+                      <InputField
+                        type="password"
+                        placeholder="Password"
+                        value={loginPassword}
+                        onChange={(e) => setLoginPassword(e.target.value)}
+                      />
 
                       <Button
                         style={{
@@ -146,32 +289,85 @@ const Account = () => {
                 <div class="blog-detail-wrapper">
                   <div class="comment-respond">
                     <h3 class="title">Register</h3>
+                    <p
+                      ref={errRefs}
+                      style={{ color: "red", paddingBottom: "15px" }}
+                    >
+                      {error?.data?.message} {errMsgs}
+                    </p>
                     <div class="contact-form-2"></div>
-                    <InputField placeholder="Email*" />
-                    <InputField placeholder="Password*" />
-                    <InputField placeholder="Confirm Password*" />
-                    <InputField placeholder="First Name*" />
-                    <InputField placeholder="Last Name*" />
-                    <InputField placeholder="Job Position*" />
-                    <InputField placeholder="Company Name*" />
-                    <Select placeholder="Select Country*">
-                      {COUNTRIES.map((data) => (
-                        <>
-                          <option>{data.name}</option>
-                        </>
-                      ))}
-                    </Select>
-                    <InputField placeholder="Phone Number*" />
-                    <CaptchaContainer>
-                      <Captcha style={{ width: "20%" }}>44A7xb</Captcha>
-                      <RefreshButton>
-                        <RefreshIcon />
-                      </RefreshButton>
-                    </CaptchaContainer>
-                    <InputField placeholder="Enter Captcha Here" />
-                    <Button style={{ width: "20%", marginBottom: "20px" }}>
-                      Register
-                    </Button>
+                    <form onSubmit={handleSubmit}>
+                      <InputField
+                        placeholder="Email*"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        ref={regRef}
+                      />
+                      <InputField
+                        placeholder="Password*"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                      <InputField
+                        placeholder="Confirm Password*"
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                      />
+                      <InputField
+                        placeholder="First Name*"
+                        value={firstname}
+                        onChange={(e) => setFirstname(e.target.value)}
+                      />
+                      <InputField
+                        placeholder="Last Name*"
+                        value={lastname}
+                        onChange={(e) => setLastname(e.target.value)}
+                      />
+                      <InputField
+                        placeholder="Job Position*"
+                        value={position}
+                        onChange={(e) => setPosition(e.target.value)}
+                      />
+                      <InputField
+                        placeholder="Company Name*"
+                        value={companyName}
+                        onChange={(e) => setCompanyName(e.target.value)}
+                      />
+                      <Select
+                        placeholder="Select Country*"
+                        onChange={(e) => setCountry(e.target.value)}
+                        value={country}
+                      >
+                        {COUNTRIES.map((data) => (
+                          <>
+                            <option value={data.name}>{data.name}</option>
+                          </>
+                        ))}
+                      </Select>
+                      <InputField
+                        placeholder="Phone Number*"
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+                      />
+                      <CaptchaContainer>
+                        <Captcha style={{ width: "20%" }} on>
+                          {captcha}
+                        </Captcha>
+                        <RefreshButton onClick={handleCaptcha}>
+                          <RefreshIcon />
+                        </RefreshButton>
+                      </CaptchaContainer>
+                      <InputField
+                        placeholder="Enter Captcha Here"
+                        value={captchaCode}
+                        onChange={(e) => setCaptchaCode(e.target.value)}
+                      />
+                      <Button style={{ width: "20%", marginBottom: "20px" }}>
+                        Register
+                      </Button>
+                    </form>
                   </div>
                 </div>
               </Panel>
@@ -184,5 +380,48 @@ const Account = () => {
     </>
   );
 };
+
+const TitleWrapper = styled.div`
+  display: flex;
+  padding-top: 25px;
+`;
+
+const ItalicText = styled.span`
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0;
+  text-transform: capitalize;
+  color: #aab7ca;
+`;
+
+const LineTitle = styled.span`
+  text-align: left;
+  position: relative;
+  color: #008053;
+  font-size: 27px;
+  font-weight: 900;
+`;
+
+const Title = styled.p`
+  text-align: left;
+  position: relative;
+  color: #3a4d6a;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0px 0px 0px 10px;
+`;
+
+const Div = styled.div``;
+
+const AccountWrapper = styled.div`
+  display: flex;
+  margin: 50px 0px;
+`;
+
+const Panel = styled.div`
+  flex: 1;
+  padding: 20px;
+`;
 
 export default Account;
