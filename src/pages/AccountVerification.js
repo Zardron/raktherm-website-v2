@@ -24,19 +24,40 @@ import Navbar from "../component/Navbar";
 import SubFooter from "../component/SubFooter";
 import Footer from "../component/Footer";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import CryptoJS from "crypto-js";
+import { useDeleteUserByEmailMutation } from "../redux/slice/api/usersApiSlice";
+import { useBeforeunload } from "react-beforeunload";
 
 const AccountVerification = () => {
-  const { email } = useParams();
+  const { emailRoute } = useParams();
   const errRef = useRef();
   const [verificationCode, setVerificationCode] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
   const hashEmail = localStorage.getItem("email-token");
+  const hashRoute = localStorage.getItem("verification-token");
+  const verificationCodeToken = localStorage.getItem("verification-code");
 
-  var bytes = CryptoJS.AES.decrypt(hashEmail, "RAKTHERM@2023");
-  var originalEmail = bytes.toString(CryptoJS.enc.Utf8);
+  const bytes = CryptoJS.AES.decrypt(
+    hashEmail === null ? "" : hashEmail,
+    "RAKTHERM@2023"
+  );
+  const email = bytes.toString(CryptoJS.enc.Utf8);
+
+  const [deleteUserByEmail] = useDeleteUserByEmailMutation();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (emailRoute !== hashRoute) {
+      localStorage.removeItem("email-token");
+      localStorage.removeItem("verification-token");
+      localStorage.removeItem("verification-code");
+      deleteUserByEmail({ email: email });
+      navigate(`/account`);
+    }
+  }, [hashRoute, hashEmail]);
 
   useEffect(() => {
     setErrMsg("");
@@ -49,11 +70,26 @@ const AccountVerification = () => {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
 
-    setErrMsg("Invalid verification code");
+    if (verificationCode !== verificationCodeToken) {
+      setErrMsg("Invalid verification code");
+    } else {
+      setErrMsg("you're good to go");
+    }
   };
 
+  useBeforeunload((event) => {
+    if (verificationCode === "") {
+      event.preventDefault();
+      window.confirm("Press a button!\nEither OK or Cancel.");
+      localStorage.removeItem("email-token");
+      localStorage.removeItem("verification-token");
+      deleteUserByEmail({ email: email });
+      navigate(`/account`);
+    }
+  });
   return (
     <>
+      {/* <Beforeunload onBeforeunload={() => "You’ll lose your data!"} /> */}
       <TopBar />
       <Navbar />
       <BannerPage>
@@ -102,9 +138,16 @@ const AccountVerification = () => {
                       {errMsg}
                     </p>
                     <div class="contact-form-2"></div>
-                    <WidgetDetails style={{ marginBottom: "0" }}>
-                      Verification code is sent to this email -{" "}
-                      <span style={{ color: "#0645AD" }}>{originalEmail}</span>
+                    <WidgetDetails
+                      style={{ marginBottom: "5px", textAlign: "initial" }}
+                    >
+                      Kindly check the email for your verification code.
+                    </WidgetDetails>
+                    <WidgetDetails
+                      style={{ marginBottom: "5px", textAlign: "initial" }}
+                    >
+                      Verification code is sent to:
+                      <span style={{ color: "#0645AD" }}> {email}</span>
                     </WidgetDetails>
                     <WidgetDetails
                       style={{
@@ -113,7 +156,7 @@ const AccountVerification = () => {
                         marginBottom: "15px",
                       }}
                     >
-                      Kindly check your email and verify your account.
+                      Kindly check your Inbox or Spam/Junk.
                     </WidgetDetails>
                     <form onSubmit={handleSubmitLogin}>
                       <InputField

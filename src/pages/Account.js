@@ -36,6 +36,7 @@ import { useLoginMutation } from "../redux/slice/api/authApiSlice";
 import { setCredentials } from "../redux/slice/authSlice";
 import { useDispatch } from "react-redux";
 import CryptoJS from "crypto-js";
+import emailjs from "@emailjs/browser";
 
 const Account = () => {
   // LOGIN
@@ -98,7 +99,23 @@ const Account = () => {
   const [country, setCountry] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [captchaCode, setCaptchaCode] = useState("");
+  const form = useRef();
   const [captcha, setCaptcha] = useState(() => {
+    let result = "";
+    const length = 6;
+
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+  });
+
+  const [verificationCode] = useState(() => {
     let result = "";
     const length = 6;
 
@@ -152,8 +169,7 @@ const Account = () => {
     captchaCode,
   ]);
 
-  var hashEmail = CryptoJS.AES.encrypt(email, "RAKTHERM@2023").toString();
-  localStorage.setItem("email-token", hashEmail);
+  const hashEmail = CryptoJS.AES.encrypt(email, "RAKTHERM@2023").toString();
 
   useEffect(() => {
     if (isSuccess) {
@@ -166,6 +182,9 @@ const Account = () => {
       setCompanyName("");
       setCountry("");
       setPhoneNumber("");
+      localStorage.setItem("email-token", hashEmail);
+      localStorage.setItem("verification-token", hashRoute);
+      localStorage.setItem("verification-code", verificationCode);
       navigate(`/account-verification/${hashRoute}`);
     }
   }, [isSuccess, navigate]);
@@ -206,6 +225,23 @@ const Account = () => {
       } else if (captcha !== captchaCode) {
         setErrMsgs("Invalid captcha code!");
       } else {
+        emailjs
+          .sendForm(
+            "service_radlyhj",
+            "template_0nktc75",
+            form.current,
+            "GOSNKTcFgAf4ET6zy"
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+              console.log("message sent");
+            },
+            (error) => {
+              console.log(error.text);
+            }
+          );
+
         await addNewUser({
           email,
           password,
@@ -215,6 +251,7 @@ const Account = () => {
           companyName,
           country,
           phoneNumber,
+          verificationCode,
         });
       }
     }
@@ -316,18 +353,24 @@ const Account = () => {
                       {error?.data?.message} {errMsgs}
                     </p>
                     <div class="contact-form-2"></div>
-                    <form onSubmit={handleSubmit}>
+                    <form ref={form} onSubmit={handleSubmit}>
                       <InputField
                         placeholder="Email*"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         ref={regRef}
+                        name="email"
                       />
                       <InputField
                         placeholder="Password*"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                      />
+                      <InputField
+                        value={verificationCode}
+                        style={{ display: "none" }}
+                        name="verificationCode"
                       />
                       <InputField
                         placeholder="Confirm Password*"
@@ -337,11 +380,13 @@ const Account = () => {
                       />
                       <InputField
                         placeholder="First Name*"
+                        name="firstname"
                         value={firstname}
                         onChange={(e) => setFirstname(e.target.value)}
                       />
                       <InputField
                         placeholder="Last Name*"
+                        name="lastname"
                         value={lastname}
                         onChange={(e) => setLastname(e.target.value)}
                       />
