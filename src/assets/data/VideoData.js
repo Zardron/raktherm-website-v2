@@ -1,88 +1,105 @@
-export const VideoData =[
+import Video1 from "../video/RAKtherm-Concealed-Cistern.mp4";
+import Video2 from "../video/RAKtherm-Ultimate-Piping-Solutions.mp4";
+import Video3 from "../video/RAKtherm-Globals-Response-on-Covid-19.mp4";
+import Video4 from "../video/The-New-Generation-Push-Fit-System.mp4";
+import Video5 from "../video/NOW-5-Layers-Reinforced-Pipes.mp4";
+import Video6 from "../video/RAKtherm-Unveils-its-RNP-Technology.mp4";
+import Video7 from "../video/Engineered-DWV-Piping-Systems.mp4";
+import Video8 from "../video/Longevous-Sealing-Technology-from-RAKtherm.mp4";
+import Video9 from "../video/RAKtherm-Globals--Circle-of-Integrity.mp4";
+import Video10 from "../video/Top-5-Reasons-Why-You-Need-to-Visit-RAKtherm-at-The-Big5-Dubai.mp4";
+import Video11 from "../video/RAKtherm-at-The-Big5-Dubai.mp4";
+import Video12 from "../video/Concealed-Ball-Valve.mp4";
+import Video13 from "../video/Y-Globe-Valve.mp4";
+import Video14 from "../video/Y-Type-Strainer.mp4";
+import Video15 from "../video/RAKtherm-Ultimate-Sealant-Solutions.mp4";
+import Video16 from "../video/RAKtherm's-SPRING-and-SWING-CHECK-VALVE.mp4";
+import Video17 from "../video/RAKtherm-Decalcifer.mp4";
+
+export const VideoData = [
   {
     id: 1,
-    src: "https://www.raktherm.com/assets/video/RAKtherm-Concealed-Cistern.mp4",
-    title: "RAKtherm Concealed Cistern"
+    src: `${Video1}`,
+    title: "RAKtherm Concealed Cistern",
   },
   {
     id: 2,
-    src: "https://www.raktherm.com/assets/video/RAKtherm-Ultimate-Piping-Solutions.mp4",
-    title: "RAKtherm Ultimate Piping Solutions"
+    src: `${Video2}`,
+    title: "RAKtherm Ultimate Piping Solutions",
   },
   {
     id: 3,
-    src: "https://www.raktherm.com/assets/video/RAKtherm-Globals-Response-on-Covid-19.mp4",
-    title: "RAKtherm Global's Response on Covid-19"
+    src: `${Video3}`,
+    title: "RAKtherm Global's Response on Covid-19",
   },
   {
     id: 4,
-    src: "https://www.raktherm.com/assets/video/The-New-Generation-Push-Fit-System.mp4",
-    title: "The New Generation Push-Fit System of Raktherm"
+    src: `${Video4}`,
+    title: "The New Generation Push-Fit System of Raktherm",
   },
   {
     id: 5,
-    src: "https://www.raktherm.com/assets/video/NOW-5-Layers-Reinforced-Pipes.mp4",
-    title: "NOW 5 Layers Reinforced Pipes!"
+    src: `${Video5}`,
+    title: "NOW 5 Layers Reinforced Pipes!",
   },
   {
     id: 6,
-    src: "https://www.raktherm.com/assets/video/RAKtherm-Unveils-its-RNP-Technology.mp4",
-    title: "RAKtherm Unveils its RNP Technology"
+    src: `${Video6}`,
+    title: "RAKtherm Unveils its RNP Technology",
   },
   {
     id: 7,
-    src: "https://www.raktherm.com/assets/video/Engineered-DWV-Piping-Systems.mp4",
-    title: "Engineered DWV Piping Systems"
+    src: `${Video7}`,
+    title: "Engineered DWV Piping Systems",
   },
   {
     id: 8,
-    src: "https://www.raktherm.com/assets/video/Longevous-Sealing-Technology-from-RAKtherm.mp4",
-    title: "Longevous Sealing Technology from RAKtherm"
+    src: `${Video8}`,
+    title: "Longevous Sealing Technology from RAKtherm",
   },
   {
     id: 9,
-    src: "https://www.raktherm.com/assets/video/RAKtherm-Globals--Circle-of-Integrity.mp4",
-    title: "RAKtherm Global's Circle of Integrity"
+    src: `${Video9}`,
+    title: "RAKtherm Global's Circle of Integrity",
   },
   {
     id: 10,
-    src: "https://www.raktherm.com/assets/video/Top-5-Reasons-Why-You-Need-to-Visit-RAKtherm-at-The-Big5-Dubai.mp4",
-    title: "Top 5 Reasons Why You Need to Visit RAKtherm at The Big5 Dubai"
+    src: `${Video10}`,
+    title: "Top 5 Reasons Why You Need to Visit RAKtherm at The Big5 Dubai",
   },
   {
     id: 11,
-    src: "https://www.raktherm.com/assets/video/RAKtherm-at-The-Big5-Dubai.mp4",
-    title: "RAKtherm at The Big5 Dubai"
+    src: `${Video11}`,
+    title: "RAKtherm at The Big5 Dubai",
   },
   {
     id: 12,
-    src: "https://www.raktherm.com/assets/video/Concealed-Ball-Valve.mp4",
-    title: "Concealed Ball Valve"
+    src: `${Video12}`,
+    title: "Concealed Ball Valve",
   },
   {
     id: 13,
-    src: "https://www.raktherm.com/assets/video/Y-Globe-Valve.mp4",
-    title: "RAKtherm Concealed Cistern"
+    src: `${Video13}`,
+    title: "RAKtherm Concealed Cistern",
   },
   {
     id: 14,
-    src: "https://www.raktherm.com/assets/video/Y-Type-Strainer.mp4",
-    title: "Y Type Strainer"
+    src: `${Video14}`,
+    title: "Y Type Strainer",
   },
   {
     id: 15,
-    src: "https://www.raktherm.com/assets/video/RAKtherm-Ultimate-Sealant-Solutions.mp4",
-    title: "RAKtherm Ultimate Sealant Solutions"
+    src: `${Video15}`,
+    title: "RAKtherm Ultimate Sealant Solutions",
   },
   {
     id: 16,
-    src: "https://www.raktherm.com/assets/video/RAKtherm's-SPRING-and-SWING-CHECK-VALVE.mp4",
-    title: "RAKtherm’s SPRING and SWING CHECK VALVE"
+    src: `${Video16}`,
+    title: "RAKtherm’s SPRING and SWING CHECK VALVE",
   },
   {
     id: 17,
-    src: "https://www.raktherm.com/assets/video/RAKtherm-Decalcifer.mp4",
-    title: "RAKtherm Decalcifer"
+    src: `${Video17}`,
+    title: "RAKtherm Decalcifer",
   },
-]
-             
+];

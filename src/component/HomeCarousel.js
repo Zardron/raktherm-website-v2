@@ -7,6 +7,12 @@ import {
   OverlayTexts,
 } from "../assets/styled/HomeCarouselStyle";
 import styled from "styled-components";
+import Banner1 from "../assets/images/home-banner/slider-banner-1.jpg";
+import Banner2 from "../assets/images/home-banner/slider-banner-2.jpg";
+import Banner3 from "../assets/images/home-banner/slider-banner-3.jpg";
+import Banner4 from "../assets/images/home-banner/slider-banner-4.jpg";
+import Banner5 from "../assets/images/home-banner/slider-banner-5.jpg";
+import Banner6 from "../assets/images/home-banner/slider-banner-6.jpg";
 
 const Image = styled.img``;
 
@@ -24,7 +30,7 @@ const HomeCarousel = () => {
         stopOnHover={true}
       >
         <Container>
-          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-1.jpg" />
+          <Image src={Banner1} />
           <OverlayText>
             <CarouselTitle>EMPOWERED BY EXPERIENCE AND EXPERTISE</CarouselTitle>
             <CarouselSubTitle>
@@ -34,7 +40,7 @@ const HomeCarousel = () => {
           </OverlayText>
         </Container>
         <Container>
-          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-3.jpg" />
+          <Image src={Banner3} />
           <OverlayText>
             <CarouselTitle>
               PERFORMING AT THE HEIGHT OF QUALITY EXCELLENCE
@@ -46,7 +52,7 @@ const HomeCarousel = () => {
           </OverlayText>
         </Container>
         <Container>
-          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-4.jpg" />
+          <Image src={Banner4} />
           <OverlayText>
             <CarouselTitle>
               UNFOLDS THE POTENTIALS IN PIPING SYSTEMS
@@ -57,7 +63,7 @@ const HomeCarousel = () => {
           </OverlayText>
         </Container>
         <Container>
-          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-5.jpg" />
+          <Image src={Banner5} />
           <OverlayText>
             <CarouselTitle>
               THE RAREFIED CONCEPT FOR NOISE-REDUCTION TECHNOLOGY
@@ -69,7 +75,7 @@ const HomeCarousel = () => {
           </OverlayText>
         </Container>
         <Container>
-          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-2.jpg" />
+          <Image src={Banner2} />
           <OverlayText>
             <CarouselTitle>
               ENGINEERED FOR ContainerERSE AND COMPREHENSIVE SOLUTIONS
@@ -81,7 +87,7 @@ const HomeCarousel = () => {
           </OverlayText>
         </Container>
         <Container>
-          <Image src="https://www.raktherm.com/assets/images/background/slider-banner-6.jpg" />
+          <Image src={Banner6} />
           <OverlayTexts>
             <CarouselTitle>
               LONGEVOUS SEALING TECHNOLOGY REPRESENTS A NEW PARADIGM

@@ -37,6 +37,8 @@ import { setCredentials } from "../redux/slice/authSlice";
 import { useDispatch } from "react-redux";
 import CryptoJS from "crypto-js";
 import emailjs from "@emailjs/browser";
+import BarLoader from "react-spinners/BarLoader";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const Account = () => {
   // LOGIN
@@ -305,39 +307,69 @@ const Account = () => {
                 <div class="blog-detail-wrapper">
                   <div class="comment-respond">
                     <h3 class="title">Login</h3>
-                    <p
-                      ref={errRef}
-                      style={{ color: "red", paddingBottom: "15px" }}
-                      aria-live="assertive"
-                    >
-                      {errMsg}
-                    </p>
-                    <div class="contact-form-2"></div>
-                    <form onSubmit={handleSubmitLogin}>
-                      <InputField
-                        placeholder="Email"
-                        ref={logRef}
-                        value={loginEmail}
-                        onChange={(e) => setLoginEmail(e.target.value)}
-                      />
-                      <InputField
-                        type="password"
-                        placeholder="Password"
-                        value={loginPassword}
-                        onChange={(e) => setLoginPassword(e.target.value)}
-                      />
 
-                      <Button
+                    {isLoading ? (
+                      <div
                         style={{
-                          width: "15%",
-                          marginRight: "10px",
-                          marginBottom: "20px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          paddingBottom: "20px",
+                          flexDirection: "column",
                         }}
                       >
-                        Login
-                      </Button>
-                      <a href="index.php?module=forgotpass">Forget Password</a>
-                    </form>
+                        <BarLoader
+                          color="#008053"
+                          cssOverride={null}
+                          height={10}
+                          speedMultiplier={0.5}
+                          width={300}
+                        />
+                        <div style={{ paddingTop: "20px" }}>
+                          <h3 class="title" style={{ display: "flex" }}>
+                            Please wait while we are processing your account...
+                          </h3>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <p
+                          ref={errRef}
+                          style={{ color: "red", paddingBottom: "15px" }}
+                          aria-live="assertive"
+                        >
+                          {errMsg}
+                        </p>
+                        <div class="contact-form-2"></div>
+                        <form onSubmit={handleSubmitLogin}>
+                          <InputField
+                            placeholder="Email"
+                            ref={logRef}
+                            value={loginEmail}
+                            onChange={(e) => setLoginEmail(e.target.value)}
+                          />
+                          <InputField
+                            type="password"
+                            placeholder="Password"
+                            value={loginPassword}
+                            onChange={(e) => setLoginPassword(e.target.value)}
+                          />
+
+                          <Button
+                            style={{
+                              width: "15%",
+                              marginRight: "10px",
+                              marginBottom: "20px",
+                            }}
+                          >
+                            Login
+                          </Button>
+                          <a href="index.php?module=forgotpass">
+                            Forget Password
+                          </a>
+                        </form>
+                      </>
+                    )}
                   </div>
                 </div>
               </Panel>

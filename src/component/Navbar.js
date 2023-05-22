@@ -23,6 +23,7 @@ import {
 } from "../assets/styled/NavbarStyle";
 import { NavbarData, Navdata2 } from "../assets/data/NavbarData";
 import { Link } from "react-router-dom";
+import Logo from "../assets/images/logo-2.png";
 
 const Navbar = () => {
   const [offset, setOffset] = useState(0);
@@ -49,10 +50,7 @@ const Navbar = () => {
       <Container>
         <LogoContainer>
           <Link to="/">
-            <Image
-              src="https://www.raktherm.com/assets/images/logos/logo-2.png"
-              alt="logo"
-            />
+            <Image src={Logo} alt="logo" />
           </Link>
         </LogoContainer>
 
